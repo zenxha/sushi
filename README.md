@@ -3,7 +3,7 @@ Group Project for tri2!
 ### Collaborators
 - Allen Xu ID: #72947445
 - Komay Sugiyama ID:
-- Chris Rubin ID:
+- Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 
 
 ## Summary
