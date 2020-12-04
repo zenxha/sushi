@@ -1,5 +1,10 @@
 # Sushi
 Group Project for tri2!
+### Collaborators
+Allen Xu ID: #72947445
+Komay Sugiyama ID:
+Chris Rubin ID:
+Devam Shrivastava ID: 
 
 ## Summary
 - We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post 
