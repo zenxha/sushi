@@ -1,8 +1,9 @@
 # Sushi
 Group Project for tri2!
+[Project Board](https://github.com/zenxha/sushi/projects/1)
 ### Collaborators
 - Allen Xu ID: #72947445
-- Komay Sugiyama ID:
+- Komay Sugiyama ID: #30739783
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
