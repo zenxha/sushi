@@ -4,7 +4,7 @@ Group Project for tri2!
 - Allen Xu ID: #72947445
 - Komay Sugiyama ID:
 - Chris Rubin ID: #72892271
-- Devam Shrivastava ID: 
+- Devam Shrivastava ID: 51984972
 
 ## Summary
 - We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post 
@@ -28,5 +28,5 @@ Group Project for tri2!
  ## Current Assignments
  - Allen Xu: Work on website navbar, edit and upload code video
  - Chris Rubin: Help set up navbar and assist Devam in backend
- - Devam Shrivastava: Work on backend code
+ - Devam Shrivastava: Work on backend code which consits of the database
  - Komay Sugiyama: Help with website blueprint, brainstorm backend
