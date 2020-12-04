@@ -1,5 +1,6 @@
 # Sushi
 Group Project for tri2!
+
 [Project Board](https://github.com/zenxha/sushi/projects/1)
 ### Collaborators
 - Allen Xu ID: #72947445
