@@ -32,3 +32,10 @@ Group Project for tri2!
  - Chris Rubin: Help set up navbar and assist Devam in backend
  - Devam Shrivastava: Work on backend code which consits of the database
  - Komay Sugiyama: Help with website blueprint, brainstorm backend
+ 
+ ## Weekly Updates
+ ### Week 1
+ - 
+ ### Week 0
+ - Created README layout
+ - Transfered information from google docs onto github readme
