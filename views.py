@@ -55,12 +55,12 @@ def landing(selection):
     return render_template("homesite/landing.html", heading=heading, menus=menus, projects=projects)
 
 
-"""Java Section"""
+"""our own project dstufsuf as"""
 
 
-@app.route('/java/hello')
-def javahello():
-    return render_template("homesite/project.html", menus=menus, data=java_hello())
+@app.route('/project')
+def project():
+    return render_template("homesite/project.html")
 
 
 @app.route('/java/mvc')
