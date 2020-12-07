@@ -19,14 +19,6 @@ Group Project for tri2!
 - Library of all the tier lists other people have made that the user can browse
 - Redirects to social media to draft messages
 
-## Structure and Design
-- Function on flask
-- Navbar that lets user navigate the website from info on sushi to posting their favorite sushis
-- Database holds information to
-  - Sushi types/descriptions
-  - Login information (this has to be dynamic)
-  - Saved tier lists
-  
  ## Current Assignments
  - Allen Xu: Work on website navbar, edit and upload code video
  - Chris Rubin: Help set up navbar and assist Devam in backend
