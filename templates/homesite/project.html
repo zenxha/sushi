@@ -1,13 +1,9 @@
-{% extends "homesite/home.html" %}
+{% extends "homesite/base2.html" %}
 
-{% block embed %}
-<html>
-<body>
-    <div class="container">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vT8ZdmyJhkG7tECjw887Yvo5qYV792QXOokIaIqYTkf-x2_xGPDqUuwfD0ZYQWQfA-FEFd94aq16kMi/pub?embedded=true" style="height:1000px;width:1920px;" ></iframe>
-    </div>
-</body>
-</html>
+{% block body %}
+  <div class="container-fluid">
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vT8ZdmyJhkG7tECjw887Yvo5qYV792QXOokIaIqYTkf-x2_xGPDqUuwfD0ZYQWQfA-FEFd94aq16kMi/pub?embedded=true" style="height:900px;width:900px;" ></iframe>
+  </div>
 {% endblock %}
 
 {% block style %}

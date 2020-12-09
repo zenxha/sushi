@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<header>
+    <nav>
+      <h1 class="logo"><a href="#">Sushi</a></h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/project">Projects</a></li>
+        <li><a href="/">Upload</a></li>
+      </ul>
+    </nav>
+  {% block body %}
+  {% endblock %}
+</header>
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 100%;
+  font-family: "Roboto";
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body, html {
+ height: 100%;
+ overflow: hidden;
+}
+
+ul, ol {
+ list-style: none;
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+
+header:before {
+  content: "";
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: grow 60s linear .5s infinite;
+  background: linear-gradient(rgba(103,135,211, .6), rgba(144,25,166, .6)), url("https://cdn.discordapp.com/attachments/784178874303905792/784179072531824650/onmyouji-anime-girls-anime-fan-art-brunette-hd-wallpaper-preview.png") no-repeat fixed top center / cover;
+}
+
+header nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header nav .logo { 
+  color: #fff; 
+  font-size: 2em; 
+  text-transform: uppercase; 
+  padding: 20px 20px 10px 20px;
+}
+
+header nav .logo a { color: #fff; }
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header nav li a {
+  color: #fff;
+  display: block;
+  position: relative;
+  padding: 20px 20px 10px;
+}
+
+header nav li a:before, header nav li a:after {
+  content: "";
+  bottom: 0;
+  width: 0px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;  
+}
+
+header nav li a:before { right: 50%; }
+header nav li a:after { left: 50%; }
+
+header nav li a:hover:before , header nav li a:hover:after {
+  width: 50%;
+}
+
+@keyframes grow {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.6) rotate(10deg);}
+}
+
+@-webkit-keyframes grow {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.6) rotate(10deg);}
+}
+
+@media only screen and (max-width: 290px) {
+  header nav ul { 
+    width: 100%; 
+    text-align: center;
+    flex-direction: column; 
+  }
+}
+
+</style>

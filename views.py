@@ -4,42 +4,15 @@ from __init__ import app
 from models.java import java_ap, java_hello, java_mvc, java_event, java_study, java_details, java_projects
 from models.python import python_hello, python_ap, python_flask, python_cbproj, python_study, python_details, \
     python_projects
-from models.pi import pi_webserver, pi_portforward, pi_vncsetup, pi_realvnc, pi_ssh, pi_details, pi_projects
-from models.git import git_concepts, git_replto, git_details, git_projects
-from models.pbl import pbl_overview, pbl_scrum, pbl_details, pbl_projects
 
-"""Main navigation Section"""
-# This section of code is driven by data, review data descriptions for understanding
 
-"""Dropdown data for menu selection"""
-# This table is used to inform HTML of items to be placed in main menu
-# -- data provider requirements are "title" and "key"
-# ---- "title" is displayed in dropdown
-# ---- "key" is used in building dynamic URL (https://www.tutorialspoint.com/flask/flask_variable_rules.htm)
-menus = [java_details(),
-         python_details(),
-         pi_details(),
-         git_details(),
-         pbl_details()
-         ]
-
-"""Coordinated lookup for dictionary that goes with selection"""
-# This dictionary is used to obtain data associated with dynamic URL
-# -- The key returns a list that has two elements
-# ---- [0] the title
-# ---- [1] the data to drive project selection dialog
-TITLE=0
-PROJECTS=1
-data = {java_details()['key']: [java_details()['title'], java_projects()],
-        python_details()['key']: [python_details()['title'], python_projects()],
-        pi_details()['key']: [pi_details()['title'], pi_projects()],
-        git_details()['key']: [git_details()['title'], git_projects()],
-        pbl_details()['key']: [pbl_details()['title'], pbl_projects()]}
+backgrounds = ["https://cdn.discordapp.com/attachments/784178874303905792/784179064378359858/Gluten-free-sushi-rolls-header.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179363100098560/wp6901896.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179072531824650/onmyouji-anime-girls-anime-fan-art-brunette-hd-wallpaper-preview.png"]
 
 
 @app.route('/')
 def index():
-    return render_template("homesite/home.html", menus=menus)
+    
+    return render_template("homesite/home.html")
 
 
 @app.route('/landing/<selection>', methods=['GET', 'POST'])
@@ -61,7 +34,9 @@ def landing(selection):
 @app.route('/project')
 def project():
     return render_template("homesite/project.html")
-
+@app.route('/base')
+def base():
+  return render_template("homesite/base2.html")
 
 @app.route('/java/mvc')
 def javamvc():
