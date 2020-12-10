@@ -2,9 +2,11 @@
 from flask import render_template, request, redirect, url_for
 from __init__ import app
 from models.python import python_hello
-import random, json
+import random, json, os
 
 backgrounds = ["https://cdn.discordapp.com/attachments/784178874303905792/784179064378359858/Gluten-free-sushi-rolls-header.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179363100098560/wp6901896.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179072531824650/onmyouji-anime-girls-anime-fan-art-brunette-hd-wallpaper-preview.png", "https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
+
+pathForImages='/images'
 
 f = open('data.json')
 data = json.load(f)
@@ -29,17 +31,17 @@ def base():
 def upload_image():
   if request.method == "POST":
 
-      if request.files:
-          image = request.files["image"]
-          print(image)
-          return redirect(request.url)
+    if request.files:
+        image = request.files["image"]
+        image.save(os.path.join(pathForImages), image.filename)
+        print('A user uploaded a file with the name of ' + image.filename)
+        return redirect(request.url)
 
   return render_template("homesite/upload.html")
 
 
 
 """Python Section"""
-
 
 @app.route('/python/hello')
 def pythonhello():
