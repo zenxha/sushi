@@ -29,7 +29,12 @@ Group Project for tri2!
  
  ## Weekly Updates
  ### Week 1
- - 
+ - Added a custom navbar onto the website
+ - Implemented a projects page which has our project plan
+ - Added a moving wallpaper to site to make it look nicer
+ - Begun work on database setup
+ 
  ### Week 0
  - Created README layout
+  - Began creating storyboards for new UI layouts for the site
  - Transfered information from google docs onto github readme
