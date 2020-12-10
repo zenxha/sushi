@@ -33,12 +33,11 @@ def upload_image():
 
     if request.files:
         image = request.files["image"]
-        image.save(os.path.join(pathForImages), image.filename)
+        image.save(pathForImages, image.filename)
         print('A user uploaded a file with the name of ' + image.filename)
         return redirect(request.url)
 
   return render_template("homesite/upload.html")
-
 
 
 """Python Section"""
