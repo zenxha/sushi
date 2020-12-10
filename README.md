@@ -1,4 +1,4 @@
-![Sushi](https://cdn.discordapp.com/attachments/783082777020203061/786703976140636210/unknown.png)
+![Sushi](https://cdn.discordapp.com/attachments/783082777020203061/786710616378572820/unknown.png)
 # Sushi
 Group Project for tri2!
 ### Links
