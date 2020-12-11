@@ -3,6 +3,7 @@
 Group Project for tri2!
 ### Links
 [Project Board](https://github.com/zenxha/sushi/projects/1)
+[Project Board](https://github.com/zenxha/sushi/projects/1)
 
 [Project Plan](https://docs.google.com/document/d/1dPvOiqA6RArgcVYMSlQAP0ztnoioO75UUg6ImmFhrQg/edit?usp=sharing)
 ### Collaborators
