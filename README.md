@@ -27,6 +27,17 @@ Group Project for tri2!
 - Library of all the tier lists other people have made that the user can browse
 - Redirects to social media to draft messages
 
+## Structure/Design:
+
+* Function on flask
+* Navbar that lets user navigate the website from info on sushi to posting their favorite sushis
+* Data driven UI designs will be storyboarded through google drawings, then implemented into the website once approved. (CB Big Idea #3)
+* Database holds information to
+* Sushi types, descriptions, and rating out of 10
+1. Login information (this has to be dynamic)
+2. Saved tier lists
+3. Images to sushis submitted by the users (will include file size limiter, file type selector)
+
 
 ## Planned Features
 - Database of every sushi
