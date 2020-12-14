@@ -33,7 +33,7 @@ Group Project for tri2!
 * Navbar that lets user navigate the website from info on sushi to posting their favorite sushis
 * Data driven UI designs will be storyboarded through google drawings, then implemented into the website once approved. (CB Big Idea #3)
 * Database holds information to
-* Sushi types, descriptions, and rating out of 10
+  * Sushi types, descriptions, and rating out of 10
   * Login information (this has to be dynamic)
   * Saved tier lists
   * Images to sushis submitted by the users (will include file size limiter, file type selector)
