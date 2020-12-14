@@ -14,6 +14,20 @@ Group Project for tri2!
 ## Summary
 - We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post 
 
+## Things we want to have: 
+
+- Database of every sushi
+- Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering 
+- Menu example: https://www.toasttab.com/rbsushi-ranchobernardo/v3
+- Login system that people can create/save accounts with
+- Have users be able to upload their own sushis (picture, desc, reviews)[SQLAlchemy]
+- Do this with database that will store sushi name, images, description, user reviews onto database (CB Big Idea #2 and #3)
+- Have an option to view the descriptions and reviews of the sushi
+- Pull from the database and display that information	
+- Library of all the tier lists other people have made that the user can browse
+- Redirects to social media to draft messages
+
+
 ## Planned Features
 - Database of every sushi
   - Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering 
