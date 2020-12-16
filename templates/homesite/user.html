@@ -1,0 +1,17 @@
+{% extends "homesite/base2.html" %}
+
+{% block title %} User {% endblock %}
+{% block body %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+<p>Welcome, {{user}}</p>
+
+<div class="container">
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vT8ZdmyJhkG7tECjw887Yvo5qYV792QXOokIaIqYTkf-x2_xGPDqUuwfD0ZYQWQfA-FEFd94aq16kMi/pub?embedded=true" style="height:680px;width:900px;"></iframe>
+</div>
+{% endblock %}
