@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="229f16b5-c894-46de-9cef-53634e15b2fb" name="Default Changelist" comment="User setup in views.py">
-      <change beforePath="$PROJECT_DIR$/.idea/sushi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sushi.iml" afterDir="false" />
+    <list default="true" id="229f16b5-c894-46de-9cef-53634e15b2fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homesite/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homesite/base2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/homesite/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homesite/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
@@ -68,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608083779508</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="User setup in views.py">
+      <created>1608085711070</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608085711070</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
