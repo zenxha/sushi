@@ -30,15 +30,15 @@ def base():
 
 @app.route("/upload", methods=["GET", "POST"])
 def upload_image():
-  if request.method == "POST":
+    if request.method == "POST":
 
-    if request.files:
-        image = request.files["image"]
-        image.save(pathForImages, image.filename)
-        print('A user uploaded a file with the name of ' + image.filename)
-        return redirect(request.url)
+        if request.files:
+            image = request.files["image"]
+            image.save(pathForImages + image.filename)
+            print('A user uploaded a file with the name of ' + image.filename)
+            return redirect(request.url)
 
-  return render_template("homesite/upload.html")
+    return render_template("homesite/upload.html")
 
 "Login Section"
 
@@ -72,12 +72,3 @@ def logout():
         flash("You have been logged out!","warning")
     session.pop("user", None)
     return redirect(url_for("login"))
-
-
-
-
-"""(SAMPLE) Python Section"""
-
-@app.route('/python/hello')
-def pythonhello():
-    return render_template("homesite/project.html", data=python_hello())

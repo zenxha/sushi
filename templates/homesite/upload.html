@@ -6,25 +6,26 @@
   <div class="row">
     <div class="col">
       <div>
-      <h1>Upload an image</h1>
+        <h1>Upload an image</h1>
       </div>
-      <hr>
-
       <form action="/upload" method="POST" enctype="multipart/form-data">
-
-        <div class="form-group">
-          <label>Select image</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" id="image">
+      <div class="form-group">
+        <label>Select image</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" name="image" id="image">
+          <div class="review" style="color: black;">
+            </br><h3>Name</h3><input type="text" name="title" style="">
+            <br><h3>Description</h3><input type="text" name="description" style="">
           </div>
+          <br><button type="submit" class="btn btn-primary">Upload</button>
         </div>
-
-        <button type="submit" class="btn btn-primary">Upload</button>
-
-      </form>
-
+      </div>
     </div>
   </div>
 </div>
+
+    <style>
+
+    </style>
 
 {% endblock %}

@@ -12,18 +12,18 @@ Group Project for tri2!
 - Devam Shrivastava ID: 51984972
 
 ## Summary
-- We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post 
+- We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post
 
-## Things we want to have: 
+## Things we want to have:
 
 - Database of every sushi
-- Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering 
+- Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering
 - Menu example: https://www.toasttab.com/rbsushi-ranchobernardo/v3
 - Login system that people can create/save accounts with
 - Have users be able to upload their own sushis (picture, desc, reviews)[SQLAlchemy]
 - Do this with database that will store sushi name, images, description, user reviews onto database (CB Big Idea #2 and #3)
 - Have an option to view the descriptions and reviews of the sushi
-- Pull from the database and display that information	
+- Pull from the database and display that information
 - Library of all the tier lists other people have made that the user can browse
 - Redirects to social media to draft messages
 
@@ -41,25 +41,25 @@ Group Project for tri2!
 
 ## Planned Features
 - Database of every sushi
-  - Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering 
+  - Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering
   - Menu example: https://www.toasttab.com/rbsushi-ranchobernardo/v3
 - Login system that people can create/save accounts with
 - Library of all the tier lists other people have made that the user can browse
 - Redirects to social media to draft messages
 
- ## Current Assignments
- - Allen Xu: Work on website navbar, edit and upload code video
- - Chris Rubin: Help set up navbar and assist Devam in backend
- - Devam Shrivastava: Work on backend code which consits of the database
- - Komay Sugiyama: Help with website blueprint, brainstorm backend
- 
- ## Weekly Updates
- ### Week 1
- - Added a navbar to the website
- - Added a custom moving background
- - Added a projects page which displays our project plan
- - Started work on the database setup
- ### Week 0
- - Created README layout
- - Started storyboarding UI layouts for the website
- - Transfered information from google docs onto github readme
+## Current Assignments
+- Allen Xu: Work on website navbar, edit and upload code video
+- Chris Rubin: Help set up navbar and assist Devam in backend
+- Devam Shrivastava: Work on backend code which consits of the database
+- Komay Sugiyama: Help with website blueprint, brainstorm backend
+
+## Weekly Updates
+### Week 1
+- Added a navbar to the website
+- Added a custom moving background
+- Added a projects page which displays our project plan
+- Started work on the database setup
+### Week 0
+- Created README layout
+- Started storyboarding UI layouts for the website
+- Transfered information from google docs onto github readme
