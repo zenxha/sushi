@@ -1,5 +1,5 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
-from flask import render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 from __init__ import app
 from models.python import python_hello
 import random, json, os
@@ -20,13 +20,14 @@ def index():
 
 """our own project dstufsuf as"""
 
-
 @app.route('/project')
 def project():
     return render_template("homesite/project.html")
+
 @app.route('/base')
 def base():
   return render_template("homesite/base2.html")
+
 @app.route("/upload", methods=["GET", "POST"])
 def upload_image():
   if request.method == "POST":
@@ -39,8 +40,31 @@ def upload_image():
 
   return render_template("homesite/upload.html")
 
+@app.route('/login')
+def login():
+    if request.method == "POST":
+            user = request.form["nm"]
+            session["user"] = user
+            return redirect(url_for("user"))
+    else:
+        if "user" in session
+            return redirect(url_for("user"))
+        return render_template("homesite/login.html")
 
-"""Python Section"""
+@app.route('/<usr>')
+def user(usr):
+    if "user" in session:
+        user = session["user"]
+    else:
+        return redirect(url_for("login"))
+    return f"<h1>{user}</h1>"
+
+@app.route('/logout')
+def logout()
+    session.pop("user", None)
+    return redirect(url_for("login"))
+
+"""(SAMPLE) Python Section"""
 
 @app.route('/python/hello')
 def pythonhello():
