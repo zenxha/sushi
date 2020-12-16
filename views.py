@@ -17,7 +17,6 @@ def index():
   return render_template("homesite/home.html", background=background)
 
 
-
 """our own project dstufsuf as"""
 
 @app.route('/project')
