@@ -1,5 +1,5 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from __init__ import app
 from models.python import python_hello
 import random, json, os
@@ -40,14 +40,17 @@ def upload_image():
 
   return render_template("homesite/upload.html")
 
+"Login Section"
+
 @app.route('/login')
 def login():
     if request.method == "POST":
-            user = request.form["nm"]
-            session["user"] = user
-            return redirect(url_for("user"))
+        session.permanent = True
+        user = request.form["nm"]
+        session["user"] = user
+        return redirect(url_for("user"))
     else:
-        if "user" in session
+        if "user" in session:
             return redirect(url_for("user"))
         return render_template("homesite/login.html")
 
@@ -60,9 +63,12 @@ def user(usr):
     return f"<h1>{user}</h1>"
 
 @app.route('/logout')
-def logout()
+def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
+
+
+
 
 """(SAMPLE) Python Section"""
 

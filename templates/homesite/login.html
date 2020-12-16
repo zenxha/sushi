@@ -8,21 +8,14 @@
     <div class="row">
         <div class="col">
             <div>
-                <h1>Upload an image</h1>
+                <h1>Sign in</h1>
             </div>
             <hr>
 
             <form action="/login" method="POST" enctype="multipart/form-data">
-
-                <div class="form-group">
-                    <label>Select image</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="image" id="image">
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Upload</button>
-
+                <p>Name:</p>
+                <p><input type="text" name="nm"></p>
+                <p><input type="submit" value="submit"></p>
             </form>
 
         </div>
