@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="229f16b5-c894-46de-9cef-53634e15b2fb" name="Default Changelist" comment="User login, logout, and session add-on">
-      <change afterPath="$PROJECT_DIR$/templates/homesite/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/homesite/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homesite/base2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="229f16b5-c894-46de-9cef-53634e15b2fb" name="Default Changelist" comment="Completed login with flash messages to explain what occurred and differnt page for login, logged in, and logged out" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608088969708</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed login with flash messages to explain what occurred and differnt page for login, logged in, and logged out">
+      <created>1608091134030</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608091134030</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,7 +101,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="User setup in views.py" />
     <MESSAGE value="User login, logout, and session add-on" />
-    <option name="LAST_COMMIT_MESSAGE" value="User login, logout, and session add-on" />
+    <MESSAGE value="Completed login with flash messages to explain what occurred and differnt page for login, logged in, and logged out" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed login with flash messages to explain what occurred and differnt page for login, logged in, and logged out" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -4,4 +4,4 @@ from datetime import timedelta
 from flask import Flask
 app = Flask(__name__)
 app.secret_key = "heyheyhey"
-app.permanent_session_lifetime = timedelta(minutes=2)
+app.permanent_session_lifetime = timedelta(hours=24)
