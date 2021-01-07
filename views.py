@@ -57,7 +57,7 @@ def login():
             flash("Already Logged In!")
             return redirect(url_for("user"))
         return render_template("homesite/login.html")
-
+@app.route('/signup')
 @app.route('/user')
 def user():
     if "user" in session:
