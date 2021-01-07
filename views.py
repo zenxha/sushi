@@ -1,13 +1,11 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
-import json
-import requests
-import random
-
-from flask import render_template, request, redirect, url_for, session, flash
-
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from __init__ import app
+from models.python import python_hello
+import random, json, os, requests
+import subprocess
 
-backgrounds = ["https://cdn.discordapp.com/attachments/784178874303905792/784179064378359858/Gluten-free-sushi-rolls-header.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179363100098560/wp6901896.png", "https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bea6d9-2ea4-457a-8ceb-b9acdf379496/d45k66i-f27635c2-c7ca-453b-9dad-dddc1d2c086f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZDhiZWE2ZDktMmVhNC00NTdhLThjZWItYjlhY2RmMzc5NDk2XC9kNDVrNjZpLWYyNzYzNWMyLWM3Y2EtNDUzYi05ZGFkLWRkZGMxZDJjMDg2Zi5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.3-YdpEq9vZOMQxfu2ESapQr9HsKmX2PJZo31rtpAcG0"]
+backgrounds = ["https://cdn.discordapp.com/attachments/784178874303905792/784179064378359858/Gluten-free-sushi-rolls-header.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179363100098560/wp6901896.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179072531824650/onmyouji-anime-girls-anime-fan-art-brunette-hd-wallpaper-preview.png", "https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='images/'
 
@@ -16,8 +14,8 @@ data = json.load(f)
 
 @app.route('/')
 def index():
-    response = requests.get('https://nekos.life/api/v2/img/wallpaper')
-    apibackground = response.json()['url']
+    #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
+    # background = response.json()['url']
     background = random.choice(backgrounds)
     return render_template("homesite/home.html", background=background)
 
@@ -40,7 +38,7 @@ def upload_image():
 
         if request.files:
             image = request.files["image"]
-            image.save("images/" + image.filename)
+            image.save(pathForImages + image.filename)
             print('A user uploaded a file with the name of ' + image.filename)
             return redirect(request.url)
 
