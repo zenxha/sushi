@@ -1,29 +1,28 @@
 {% extends "homesite/base2.html" %}
 
 {% block body %}
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div>
-        <h1>Upload an image</h1>
-      </div>
-      <form action="/upload" method="POST" enctype="multipart/form-data">
+<div class="row">
+  <div class="col">
+    <div>
+      <h1>Upload an image</h1>
+    </div>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
       <div class="form-group">
         <label>Select image</label>
-          <div class="wrapper">
-            <div class="file-upload">
-              <input type="file" />
-              <i class="fa fa-arrow-up"></i>
-            <i class="fa fa-arrow-up"></i>
-          <div class="review" style="color: black;">
-            <br> 
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" name="image" id="image">
+          <div class="review" style="color: white;">
+            </br><h3>Name</h3><input type="text" name="title" style="color:black;">
+            <br><h3>Description</h3><input type="text" name="description" style="color:black;">
           </div>
           <br><button type="submit" class="btn btn-primary">Upload</button>
         </div>
       </div>
-    </div>
   </div>
 </div>
+
 
 <style>
 @import "compass/css3";
