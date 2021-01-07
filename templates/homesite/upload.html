@@ -2,55 +2,94 @@
 
 {% block body %}
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <div>
-        <h1>Upload an image</h1>
-      </div>
-      <form action="/upload" method="POST" enctype="multipart/form-data">
-      <div class="form-group">
-        <label>Select image</label>
+    <div class="row">
+        <div class="col">
+            <div>
+                <h1>Upload an image</h1>
+            </div>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Select image</label>
+                    <div class="wrapper">
+                        <div class="file-upload">
+                            <input type="file" />
+                            <i class="fa fa-arrow-up"></i>
+                            <i class="fa fa-arrow-up"></i>
+                            <div class="review" style="color: black;">
+                                </br><h3>Name</h3><input type="text" name="title" style="">
+                                <br>
+                            </div>
+                            <br><button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                    </div>
+                </div>
         </div>
-        <div class="custom-file">
-          <input type="file" name="file" id="file" class="inputfile" />
-            <label for="file">Choose a file</label>
-          <div class="review" style="color: black;">
-            </br><h3>Name</h3><input type="text" name="title" style="">
-            <br> 
-          </div>
-          <br><button type="submit" class="btn btn-primary">Upload</button>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
-<style>
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+    <style>
+html{
+  height:100%;
 }
 
-.inputfile + label {
-  font-size: 1.25em;
-  font-weight: 700;
-  color: white;
-  background-color: #bd5ae0;
-  display: inline-block;
+body{
+
+  background-color:#2590EB;
+  height:100%;
 }
 
-.inputfile:focus + label,
-.inputfile + label:hover {
-  background-color: #b72ee8;
-}
+.wrapper{
 
-.inputfile + label {
-	cursor: pointer; /* "hand" cursor */
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+
+  .file-upload{
+
+    height:200px;
+    width:200px;
+    border-radius: 100px;
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    border:4px solid #FFFFFF;
+    overflow:hidden;
+    background-image: linear-gradient(to bottom, #2590EB 50%, #FFFFFF 50%);
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #FFFFFF;
+    font-size:100px;
+
+    input[type='file']{
+
+      height:200px;
+      width:200px;
+      position:absolute;
+      top:0;
+      left:0;
+      opacity:0;
+      cursor:pointer;
+
+    }
+
+    &:hover{
+
+      background-position: 0 -100%;
+
+      color:#2590EB;
+
+    }
+
+
+  }
 }
 </style>
 
-{% endblock %}
+    {% endblock %}
+
+
