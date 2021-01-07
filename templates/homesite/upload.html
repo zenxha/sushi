@@ -10,10 +10,11 @@
       <form action="/upload" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label>Select image</label>
-        </div>
-        <div class="custom-file">
-          <input type="file" name="file" id="file" class="inputfile" />
-            <label for="file">Choose a file</label>
+          <div class="wrapper">
+            <div class="file-upload">
+              <input type="file" />
+              <i class="fa fa-arrow-up"></i>
+            <i class="fa fa-arrow-up"></i>
           <div class="review" style="color: black;">
             </br><h3>Name</h3><input type="text" name="title" style="">
             <br> 
@@ -26,31 +27,9 @@
 </div>
 
 <style>
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
 
-.inputfile + label {
-  font-size: 1.25em;
-  font-weight: 700;
-  color: white;
-  background-color: #bd5ae0;
-  display: inline-block;
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-  background-color: #b72ee8;
-}
-
-.inputfile + label {
-	cursor: pointer; /* "hand" cursor */
-}
 </style>
 
 {% endblock %}
+
+
