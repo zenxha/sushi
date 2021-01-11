@@ -32,6 +32,8 @@ Group Project for tri2!
 * Function on flask
 * Navbar that lets user navigate the website from info on sushi to posting their favorite sushis
 * Data driven UI designs will be storyboarded through google drawings, then implemented into the website once approved. (CB Big Idea #3)
+* Login function to save information the user performs in database
+* Upload page will allow user to add own sushi images into database
 * Database holds information to
   * Sushi types, descriptions, and rating out of 10
   * Login information (this has to be dynamic)
@@ -54,6 +56,18 @@ Group Project for tri2!
 - Komay Sugiyama: Help with website blueprint, brainstorm backend
 
 ## Weekly Updates
+### Week 4
+- Upload page is fully functional, CSS will be incorporated later
+- Login working, sessions are saved in cookies, planning on adding a password function later on
+- Database working on Devam's individual github, will add to main github soon
+### Week 3
+- Continued work on upload page, mainly fixing file directory path and adding CSS
+- Continued work on log in page
+- Began using SQLite for database creation
+### Week 2
+- Changed backgorund to use an api for many different sushi pictures
+- Started work on an upload page that adds images into our database upload via user
+- Started work on a log in page for the site
 ### Week 1
 - Added a navbar to the website
 - Added a custom moving background
