@@ -49,6 +49,7 @@ def upload_image():
 
 @app.route('/login', methods=["POST", "GET"])
 def login():
+    background = random.choice(backgrounds)
     if request.method == "POST":
         session.permanent = True
         user = request.form["nm"]
@@ -59,7 +60,7 @@ def login():
         if "user" in session:
             flash("Already Logged In!")
             return redirect(url_for("user"))
-        return render_template("homesite/login.html")
+        return render_template("homesite/login.html", background=background)
 @app.route('/signup')
 @app.route('/user')
 def user():
