@@ -1,9 +1,10 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+import json
+import random
+
+from flask import render_template, request, redirect, url_for, session, flash
+
 from __init__ import app
-from models.python import python_hello
-import random, json, os, requests
-import subprocess
 
 backgrounds = ["https://cdn.discordapp.com/attachments/784178874303905792/784179064378359858/Gluten-free-sushi-rolls-header.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179363100098560/wp6901896.png", "https://cdn.discordapp.com/attachments/784178874303905792/784179072531824650/onmyouji-anime-girls-anime-fan-art-brunette-hd-wallpaper-preview.png", "https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
@@ -61,6 +62,9 @@ def login():
             flash("Already Logged In!")
             return redirect(url_for("user"))
         return render_template("homesite/login.html", background=background)
+@app.route('/loginv2')
+def loginv2():
+    return render_template("homesite/loginv2.html")
 @app.route('/signup')
 @app.route('/user')
 def user():

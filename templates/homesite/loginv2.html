@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- https://codepen.io/asimanov/pen/dPrwqr?editors=0010 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>I Know Forms</title>
+<style type="text/css">
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+#password{
+    margin-bottom: 5px;
+}
+p.show{
+    margin: 0 auto 1.8em;
+    font-style: italic;
+    cursor: pointer;
+
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  form {
+    max-width: 480px;
+  }
+}
+
+</style>
+</head>
+<body>
+ <!--
+  using get method so that the students can see the data being submitted by the form when successful.
+  using JS to add novalidate into the form attribute so that we can use HTML5 validation as a fallback if someone is not allowing JS on their page.
+ -->
+
+<form action="#" method="post" id="sign-up">
+  <h1>Sign Up</h1>
+  <fieldset>
+    <!-- made these fields required -->
+    <legend><span class="number">1</span> Your basic info</legend>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name" required placeholder="your name" autofocus>
+    <label for="mail">Email:</label>
+    <input type="email" id="email" name="user_email" placeholder="you@you.com" required>
+
+    <label for="phone">Phone:</label>
+    <!-- this is an example of the pattern attribute:  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" this could be used to force the user to use the proper format -->
+    <input type="tel" id="phone" name="phone" placeholder="619-555-1212">
+    <!-- same for minlength and maxlength: minlength="8" maxlength="20" we're using JS to do this.-->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="user_password" placeholder="must be 8-20 characters long" >
+    <p class="show">show password</p>
+    <div class="error">
+        <!-- if the user does not fill out the required elements or has something wrong we can tell the user with this information.-->
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">2</span> Your profile</legend>
+    <label for="bio">Bio:</label>
+    <textarea id="bio" name="user_bio"></textarea>
+
+    <label for="age">Age</label>
+    <input type="number" name="age" id="age" min="1" max="150" step="1">
+
+    <label for="date">Birthday</label>
+    <input type="date" name="date" id="date">
+
+    <label>Coffee?</label>
+    <input type="radio" id="love" value="love" name="coffee"><label for="love" class="light">Love it</label><br/>
+    <input type="radio" id="dislike" value="dislike" name="coffee"><label for="dislike" class="light">Don't Like</label>
+  </fieldset>
+
+  <label for="job">Job Role</label>
+  <select id="job" name="user_job" required>
+            <option>Please Choose</option>
+            <optgroup label="Web">
+                <option value="frontend_developer">Front-End Developer</option>
+                <option value="php_developer">PHP Developer</option>
+                <option value="python_developer">Python Developer</option>
+                <option value="rails_developer">Rails Developer</option>
+                <option value="web_designer">Web Designer</option>
+                <option value="wordpress_developer">Wordpress Developer</option>
+            </optgroup>
+            <optgroup label="Mobile">
+                <option value="android_developer">Android Developer</option>
+                <option value="ios_developer">iOS Developer</option>
+                <option value="mobile_designer">Mobile Designer</option>
+            </optgroup>
+            <optgroup label="Business">
+                <option value="business_owner">Business Owner</option>
+                <option value="freelancer">Freelancer</option>
+            </optgroup>
+    </select>
+
+  <label>Interests</label>
+  <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">Development</label><br>
+  <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Design</label><br>
+  <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Business</label>
+
+  <button type="submit">Sign Up</button>
+
+</form>
+
+<script type="text/javascript">
+    'use strict'; //ensures we are using the most modern JS interpreter available to the browser. And keeps us on our toes for best practices.
+
+//variables at the top ensure the whole program has access to them.
+    const pass = document.querySelector('#password');
+    const show = document.querySelector('p.show');
+    const form = document.querySelector('#sign-up');
+    const errorDiv = document.querySelector('.error');
+    const phone = document.querySelector('#phone');
+    const name = document.querySelector('#name');
+    const email = document.querySelector('#email');
+    form.setAttribute('novalidate', 'novalidate');
+
+
+/* #1 problem for people is passwords. Sometimes they fatfinger their phone or keyboard and mis-type their password and cannot get into their account. This functionality lets them see what they typed. Passwords are just obsured, not encrypted and not more secure than a regular text box. Good practice is to store them with a hash in a db */
+    //event listener for a password viewing toggle.
+    show.addEventListener('click', function(){
+        //the keyword: this is the item that was clicked. this can be used in other context and can be tricky. Use with care.
+
+        let text = this.textContent; //gets the current text value of the show element
+         //compares the value of the text
+        if(text === 'show password'){
+            this.textContent = 'hide password'; //sets the value of the text
+            pass.setAttribute('type', 'text'); //sets the type of input the password input box is.
+        }else{
+            this.textContent = 'show password';
+            pass.setAttribute('type', 'password');
+        }
+
+    })
+
+    //form validation:
+    //this event listener is attached to the form and listens for the submit event
+    form.addEventListener('submit', function(event){
+        //the event parameter/variable works like a local variable to capture the event object, which has lots of information about the event that occured. By having access to the event obect we can access its properties and methods.
+            let errors = []; //this is an empty array. it is here to store any error messages we need to output to the page to let the user know he needs to fix.
+            let nameVal = name.value.trim();
+            let emailVal = email.value.trim();
+            let phoneVal = phone.value.trim();
+            let passVal = password.value.trim(); //trim clears whitespace on both sides of entry. " password " becomes "password"
+            //once these have been trimmed reinsert these values into the value attribute:
+            name.value = nameVal;
+            email.value = emailVal;
+            pass.value = passVal;
+            phone.value = phoneVal;
+
+            //cannot place a required attribute on these, so I need to check to see if at least one is checked.
+            let radioButtons = document.querySelectorAll('[type="radio"]'); //all the radio buttons
+            let checkboxes = document.querySelectorAll('[type="checkbox"]'); //all the checkboxes
+
+            if(nameVal === '' || nameVal == null){
+                errors.push('Name is required')
+            }
+
+            if(emailVal === '' || emailVal == null){
+                errors.push('email is required')
+            }else{
+                //we know we have a value... let's check to see if it is a good one.
+                let atPos = emailVal.indexOf('@');
+                let dotPos = emailVal.lastIndexOf('.');
+                //check to see if that value is valid
+                if(atPos < 1 || (dotPos - atPos < 2)){
+                    errors.push('Please enter a proper email address.')
+                }
+            }
+
+            if(phoneVal === '' || phoneVal == null){
+                //nothing was entered into the name field.
+                errors.push('Phone is required. ')
+            }else if(phoneVal.length < 10 ){
+                //less than 10, incomplete
+                errors.push('Your phone number seems incomplete. Please check.'); //push is a method to add items to an array.
+            }else if(phoneVal.length > 12){
+                errors.push('Your phone number seems too long. Please check.')
+            }
+
+            if(passVal === '' || passVal == null){
+                //nothing was entered into the name field.
+                errors.push('Password is required. ');
+            }else if(passVal.length < 8 || passVal.length > 20){
+                errors.push('password must be between 8 and 20 characters long.')
+            }
+
+            if(! isChecked(radioButtons)){
+                console.log('false');
+                errors.push('you need to select if you like coffee or not')
+            }
+
+            if(! isChecked(checkboxes)){
+                console.log('false');
+                errors.push('you need to select an interest');
+            }
+
+            if(errors.length > 0){
+                //this means we have at least one error message. So we need to prevent the form from submitting.
+                event.preventDefault(); //this is a method that prevents the event's typical behavior. So in this case we are preventing the page from submitting like it normally would.
+                //now we want to let the user know that they need to fill out stuff before they resubmit.
+                //populate the errorDiv with the content we want:
+                errorDiv.innerHTML = errors.join('<br>');
+
+            }
+
+    })
+
+/*
+    function to check if an item within a set of elements have a checked property
+    @parm: set - an array or array like set of elements
+    @return - true or false based on if at least one set of elements has the checked property.
+
+*/
+
+    function isChecked(set){
+        let check = false;
+        for(var i = 0; i < set.length; i++){
+            if(set[i].checked === true && check === false){
+                check = true;
+                break;
+            }
+        }
+        return check;
+    }
+
+</script>
+</body>
+</html>
