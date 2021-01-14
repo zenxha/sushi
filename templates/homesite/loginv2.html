@@ -5,7 +5,7 @@
     <!-- https://codepen.io/asimanov/pen/dPrwqr?editors=0010 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>I Know Forms</title>
+	<title>Submit a review</title>
 <style type="text/css">
 *,
 *:before,
@@ -143,42 +143,27 @@ p.show{
  -->
 
 <form action="#" method="post" id="sign-up">
-  <h1>Sign Up</h1>
+  <h1>Draft review</h1>
   <fieldset>
     <!-- made these fields required -->
     <legend><span class="number">1</span> Your basic info</legend>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="user_name" required placeholder="your name" autofocus>
+    <input type="text" id="name" name="user_name" required placeholder="Ben Dover" autofocus>
     <label for="mail">Email:</label>
-    <input type="email" id="email" name="user_email" placeholder="you@you.com" required>
-
-    <label for="phone">Phone:</label>
+    <input type="email" id="email" name="user_email"  required>
+    <label for="bio">Leave your review here</label>
+    <textarea id="bio" name="user_bio"></textarea>
+    <label>Coffee?</label>
+    <input type="radio" id="love" value="love" name="coffee"><label for="love" class="light">Love it</label><br/>
+    <input type="radio" id="dislike" value="dislike" name="coffee"><label for="dislike" class="light">Don't Like</label>
     <!-- this is an example of the pattern attribute:  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" this could be used to force the user to use the proper format -->
-    <input type="tel" id="phone" name="phone" placeholder="619-555-1212">
     <!-- same for minlength and maxlength: minlength="8" maxlength="20" we're using JS to do this.-->
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="user_password" placeholder="must be 8-20 characters long" >
-    <p class="show">show password</p>
+
     <div class="error">
         <!-- if the user does not fill out the required elements or has something wrong we can tell the user with this information.-->
     </div>
   </fieldset>
 
-  <fieldset>
-    <legend><span class="number">2</span> Your profile</legend>
-    <label for="bio">Bio:</label>
-    <textarea id="bio" name="user_bio"></textarea>
-
-    <label for="age">Age</label>
-    <input type="number" name="age" id="age" min="1" max="150" step="1">
-
-    <label for="date">Birthday</label>
-    <input type="date" name="date" id="date">
-
-    <label>Coffee?</label>
-    <input type="radio" id="love" value="love" name="coffee"><label for="love" class="light">Love it</label><br/>
-    <input type="radio" id="dislike" value="dislike" name="coffee"><label for="dislike" class="light">Don't Like</label>
-  </fieldset>
 
   <label for="job">Job Role</label>
   <select id="job" name="user_job" required>
@@ -215,11 +200,11 @@ p.show{
     'use strict'; //ensures we are using the most modern JS interpreter available to the browser. And keeps us on our toes for best practices.
 
 //variables at the top ensure the whole program has access to them.
-    const pass = document.querySelector('#password');
+    // const pass = document.querySelector('#password');
     const show = document.querySelector('p.show');
     const form = document.querySelector('#sign-up');
     const errorDiv = document.querySelector('.error');
-    const phone = document.querySelector('#phone');
+    // const phone = document.querySelector('#phone');
     const name = document.querySelector('#name');
     const email = document.querySelector('#email');
     form.setAttribute('novalidate', 'novalidate');
@@ -249,13 +234,13 @@ p.show{
             let errors = []; //this is an empty array. it is here to store any error messages we need to output to the page to let the user know he needs to fix.
             let nameVal = name.value.trim();
             let emailVal = email.value.trim();
-            let phoneVal = phone.value.trim();
-            let passVal = password.value.trim(); //trim clears whitespace on both sides of entry. " password " becomes "password"
+            // let phoneVal = phone.value.trim();
+            // let passVal = password.value.trim(); //trim clears whitespace on both sides of entry. " password " becomes "password"
             //once these have been trimmed reinsert these values into the value attribute:
             name.value = nameVal;
             email.value = emailVal;
             pass.value = passVal;
-            phone.value = phoneVal;
+            // phone.value = phoneVal;
 
             //cannot place a required attribute on these, so I need to check to see if at least one is checked.
             let radioButtons = document.querySelectorAll('[type="radio"]'); //all the radio buttons
