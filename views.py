@@ -64,6 +64,12 @@ def login():
         return render_template("homesite/login.html", background=background)
 @app.route('/loginv2')
 def loginv2():
+    if request.files:
+        image = request.files["image"]
+        image.save(pathForImages + image.filename)
+        print('A user uploaded a file with the name of ' + image.filename)
+        return redirect(request.url)
+
     return render_template("homesite/loginv2.html")
 @app.route('/signup')
 @app.route('/user')
