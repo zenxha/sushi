@@ -302,10 +302,12 @@ p.show{
               </div>
           </div>
 
+<br>
+    <label>Satisfaction Level</label>
+    <input type="radio" id="love" value="love" name="coffee"><label for="love" class="light">Loved it</label><br/>
+    <input type="radio" id="meh" value="meh" name="coffee"><label for="meh" class="light">Meh...</label><br/>
+    <input type="radio" id="hate" value="dislike" name="coffee"><label for="hate" class="light">Hated it</label><br/>
 
-    <label>Coffee?</label>
-    <input type="radio" id="love" value="love" name="coffee"><label for="love" class="light">Love it</label><br/>
-    <input type="radio" id="dislike" value="dislike" name="coffee"><label for="dislike" class="light">Don't Like</label>
     <!-- this is an example of the pattern attribute:  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" this could be used to force the user to use the proper format -->
     <!-- same for minlength and maxlength: minlength="8" maxlength="20" we're using JS to do this.-->
 
@@ -433,7 +435,7 @@ p.show{
 
             if(! isChecked(radioButtons)){
                 console.log('false');
-                errors.push('you need to select if you like coffee or not')
+                errors.push('Please put a satisfaction level.')
             }
 
             if(! isChecked(checkboxes)){
