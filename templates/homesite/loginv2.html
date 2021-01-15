@@ -282,7 +282,7 @@ p.show{
   using JS to add novalidate into the form attribute so that we can use HTML5 validation as a fallback if someone is not allowing JS on their page.
  -->
 
-<form action="#" method="POST" id="sign-up">
+<form action="/loginv2" method="POST" id="sign-up">
   <h1>Draft review</h1>
   <fieldset>
     <!-- made these fields required -->
@@ -294,7 +294,7 @@ p.show{
     <label for="bio">Leave your review here</label>
     <textarea id="bio" name="user_bio"></textarea>
       <!--upload part-->
-      <form action="/upload" method="POST" enctype="multipart/form-data">
+
           <div class="form-group">
               <label>Select image</label>
               <div class="custom-file">
