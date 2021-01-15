@@ -2,8 +2,8 @@
 # Sushi
 Group Project for tri2!
 ### Links
-[Project Board](https://github.com/zenxha/sushi/projects/1)
-Week 1/11 Project Board:https://github.com/zenxha/sushi/projects/2
+- [Project Board](https://github.com/zenxha/sushi/projects/1)
+- [Week1/11 Project Board](https://github.com/zenxha/sushi/projects/2)
 ### Grading
 #### Scrum Master Grade: 15
 #### Individual
