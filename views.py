@@ -1,7 +1,8 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
 import json
 import random
-
+import sqlite3
+from flask import g
 from flask import render_template, request, redirect, url_for, session, flash
 
 from __init__ import app
@@ -12,7 +13,18 @@ pathForImages='./images/'
 
 f = open('data.json')
 data = json.load(f)
+DATABASE = 'templates/homesite/Users.db
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect(DATABASE)
+    return db
 
+@app.teardown_appcontext
+def close_connection(exception):
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()'
 @app.route('/')
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
