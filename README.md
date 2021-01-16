@@ -6,12 +6,12 @@ Group Project for tri2!
 - [Week 1/11 Project Board](https://github.com/zenxha/sushi/projects/2)
 - Runtime link: rubinfamily.dyndns.org:5000
 ### Grading
-#### Scrum Master Grade: 15
+#### Scrum Master Grade: 19/20
 #### Individual
-- Allen Xu:5
-- Chris Rubin: 5
-- Devam Shrivastava:5
-- Komay Sugiyama:5
+- Allen Xu:5/5
+- Chris Rubin: 5/5
+- Devam Shrivastava:5/5
+- Komay Sugiyama:5/5
 
 ### Collaborators
 - Allen Xu ID: #72947445
