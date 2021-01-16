@@ -1,9 +1,9 @@
-![Sushi](https://cdn.discordapp.com/attachments/783082777020203061/786710616378572820/unknown.png)
+![Sushi](https://cdn.discordapp.com/attachments/783082777020203061/799906807388307496/unknown.png)
 # Sushi
 Group Project for tri2!
 ### Links
 - [Project Board](https://github.com/zenxha/sushi/projects/1)
-- [Week 1/11 Project Board](https://github.com/zenxha/sushi/projects/2)
+- [Week 1/15 Project Board](https://github.com/zenxha/sushi/projects/2)
 - Runtime link: rubinfamily.dyndns.org:5000
 ### Grading
 #### Scrum Master Grade: 19/20
@@ -22,8 +22,24 @@ Group Project for tri2!
 ## Summary
 - We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post
 
-## Things we want to have:
+## Additions for 1/15/2021 Week:
 
+### Project Plan webpage:
+- We have a page dedicated to our project plan, which we have embeded.
+  ![Project Plan](https://cdn.discordapp.com/attachments/783082777020203061/799907431709671455/unknown.png)
+
+### Upload Page: 
+- This is our new updated Upload page. This is a combination of HTML and CSS (which was for the design of the form).
+  ![Upload](https://cdn.discordapp.com/attachments/783082777020203061/799908471565975572/unknown.png)
+
+### Login (Probably the hardest thing to do all year):
+- Created a login page and when the first login occurs, the username and password is stored in Users.db
+  ![Login](https://cdn.discordapp.com/attachments/783082777020203061/799911326968840192/unknown.png)
+- The code that helps save the username and password in the database is shown below:
+  ![Code](https://cdn.discordapp.com/attachments/783082777020203061/799912990979784724/unknown.png)
+- When you click submit, it takes you to the User confirmation page shown below (and also has the project page embedded):
+![User](https://cdn.discordapp.com/attachments/783082777020203061/799913571285991444/unknown.png)
+## Things we want to have:
 - Database of every sushi
 - Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering
 - Menu example: https://www.toasttab.com/rbsushi-ranchobernardo/v3
