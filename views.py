@@ -13,7 +13,7 @@ pathForImages='./images/'
 
 f = open('data.json')
 data = json.load(f)
-DATABASE = 'templates/homesite/Users.db
+DATABASE = 'templates/homesite/Users.db'
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
@@ -24,7 +24,7 @@ def get_db():
 def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
-        db.close()'
+        db.close()
 @app.route('/')
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
