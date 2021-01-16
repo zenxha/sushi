@@ -45,7 +45,7 @@ def base():
 
 app.config["IMAGE_UPLOADS"]="/images"
 
-@app.route("/upload", methods=["GET", "POST"])
+'''@app.route("/upload", methods=["GET", "POST"])'''
 def upload_image():
     if request.method == "POST":
 
@@ -74,7 +74,7 @@ def login():
             flash("Already Logged In!")
             return redirect(url_for("user"))
         return render_template("homesite/login.html", background=background)
-@app.route('/loginv2', methods=["POST", 'GET'])
+@app.route('/upload', methods=["POST", 'GET'])
 def loginv2():
     background = random.choice(backgrounds)
     if request.method == "POST":
