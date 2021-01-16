@@ -80,8 +80,9 @@ def loginv2():
         if request.files:
             image = request.files["image"]
             image.save(pathForImages + image.filename)
-            name = request.files["name"]
-            print(name + ' uploaded a file with the name of ' + image.filename)
+            name = request.form["name"]
+            satisfaction = request.form["satisfaction"]
+            print(name + ' uploaded a file with the name of ' + image.filename + '\n' + "satisfaction level " + satisfaction)
             return redirect(request.url)
 
     return render_template("homesite/loginv2.html")
