@@ -65,7 +65,7 @@ def login():
     background = random.choice(backgrounds)
     if request.method == "POST":
         session.permanent = True
-        user = request.form["nm"]
+        user = request.form["username"]
         session["user"] = user
         flash("Login Successful!")
         return redirect(url_for("user"))
