@@ -62,13 +62,15 @@ def login():
             flash("Already Logged In!")
             return redirect(url_for("user"))
         return render_template("homesite/login.html", background=background)
-@app.route('/loginv2')
+@app.route('/loginv2', methods=["POST", 'GET'])
 def loginv2():
-    if request.files:
-        image = request.files["image"]
-        image.save(pathForImages + image.filename)
-        print('A user uploaded a file with the name of ' + image.filename)
-        return redirect(request.url)
+    if request.method == "POST":
+        if request.files:
+            image = request.files["image"]
+            image.save(pathForImages + image.filename)
+            name = request.files["name"]
+            print(name + ' uploaded a file with the name of ' + image.filename)
+            return redirect(request.url)
 
     return render_template("homesite/loginv2.html")
 @app.route('/signup')
