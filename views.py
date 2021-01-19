@@ -43,6 +43,10 @@ def project():
 def base():
   return render_template("homesite/base2.html")
 
+@app.route('/slideshow')
+def slideshow():
+    return render_template("homesite/slideshow.html")
+
 app.config["IMAGE_UPLOADS"]="/images"
 
 '''@app.route("/upload", methods=["GET", "POST"])'''
