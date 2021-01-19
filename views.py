@@ -79,13 +79,14 @@ def login():
             return redirect(url_for("user"))
         return render_template("homesite/login.html", background=background)
 @app.route('/upload', methods=["POST", 'GET'])
-def loginv2():
+def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
+        print("lol")
         if request.files:
             image = request.files["image"]
             image.save(pathForImages + image.filename)
-            name = request.form["name"]
+            name = request.form["user_name"]
             satisfaction = request.form["satisfaction"]
             print(name + ' uploaded a file with the name of ' + image.filename + '\n' + "satisfaction level " + satisfaction)
             return redirect(request.url)
