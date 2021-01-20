@@ -110,11 +110,7 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
-app = Flask(__name__)
-
 @app.route('/logtrial', methods=['GET', 'POST'])
-def index():
+def logtrial():
     return render_template('homesite/login.html')
 
-if __name__ == '__main__':
-    app.run()
