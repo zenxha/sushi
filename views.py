@@ -109,3 +109,12 @@ def logout():
         flash("You have been logged out!","warning")
     session.pop("user", None)
     return redirect(url_for("login"))
+
+app = Flask(__name__)
+
+@app.route('/logtrial', methods=['GET', 'POST'])
+def index():
+    return render_template('homesite/login.html')
+
+if __name__ == '__main__':
+    app.run()
