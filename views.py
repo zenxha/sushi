@@ -2,7 +2,6 @@
 import json
 import random
 import sqlite3
-import mysql.connector as mysql
 from flask import g
 from flask import render_template, request, redirect, url_for, session, flash
 from flask_mysqldb import MySQL
