@@ -2,9 +2,10 @@
 import json
 import random
 import sqlite3
+import mysql.connector as mysql
 from flask import g
 from flask import render_template, request, redirect, url_for, session, flash
-
+from flask_mysqldb import MySQL
 from __init__ import app
 
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
@@ -19,6 +20,13 @@ def get_db():
     if db is None:
         db = g._database = sqlite3.connect(DATABASE)
     return db
+
+app.config['MYSQL_HOST'] = '192.168.1.85'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'sushi'
+app.config['MYSQL_DB'] = 'usersdb'
+
+mysql = MySQL(app)
 
 @app.teardown_appcontext
 def close_connection(exception):
@@ -68,16 +76,26 @@ def upload_image():
 def login():
     background = random.choice(backgrounds)
     if request.method == "POST":
-        session.permanent = True
-        user = request.form["username"]
-        session["user"] = user
-        flash("Login Successful!")
-        return redirect(url_for("user"))
-    else:
-        if "user" in session:
-            flash("Already Logged In!")
-            return redirect(url_for("user"))
-        return render_template("homesite/login.html", background=background)
+        details = request.form
+        username = details['username']
+        password = details['password']
+        cur = mysql.connector.connect(database='usersdb')
+        cursor = cur.cursor()
+        cur.execute("INSERT INTO usersreg(username, password) VALUES (%s, %s)", (username, password))
+        mysql.connection.commit()
+        cur.close()
+        return 'success'
+#    if request.method == "POST":
+#        session.permanent = True
+#        user = request.form["username"]
+#        session["user"] = user
+#        flash("Login Successful!")
+#        return redirect(url_for("user"))
+#    else:
+#        if "user" in session:
+#            flash("Already Logged In!")
+#            return redirect(url_for("user"))
+    return render_template("homesite/login.html", background=background)
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
     background = random.choice(backgrounds)
@@ -110,11 +128,15 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
-app = Flask(__name__)
-
-@app.route('/logtrial', methods=['GET', 'POST'])
-def index():
+@app.route('/logtrial', methods=['POST', 'GET'])
+def logtrial():
+    if request.method == "POST":
+        details = request.form
+        username = details['username']
+        password = details['password']
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO usersreg(username, password) VALUES (%s, %s)", (username, password))
+        mysql.connection.commit()
+        cur.close()
+        return 'success'
     return render_template('homesite/login.html')
-
-if __name__ == '__main__':
-    app.run()
