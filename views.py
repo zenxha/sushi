@@ -8,7 +8,7 @@ from flask import render_template, request, redirect, url_for, session, flash
 from flask_mysqldb import MySQL
 from __init__ import app
 
-backgrounds = ["https://www.reddit.com/r/Animewallpaper/search.rss?q=flair_name%3A%22Desktop%22&restrict_sr=1"]
+backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
 
@@ -127,20 +127,4 @@ def logout():
         flash("You have been logged out!","warning")
     session.pop("user", None)
     return redirect(url_for("login"))
-<<<<<<< HEAD
 
-@app.route('/logtrial', methods=['POST', 'GET'])
-def logtrial():
-    if request.method == "POST":
-        details = request.form
-        username = details['username']
-        password = details['password']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO usersreg(username, password) VALUES (%s, %s)", (username, password))
-        mysql.connection.commit()
-        cur.close()
-        return 'success'
-    return render_template('homesite/login.html')
-
-=======
->>>>>>> 3b91d9ea6e3922bcf3b5ec630cf60d52664fef74
