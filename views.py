@@ -21,7 +21,7 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
     return db
 
-app.config['MYSQL_HOST'] = '192.168.1.85'
+app.config['MYSQL_HOST'] = '76.176.54.2'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'sushi'
 app.config['MYSQL_DB'] = 'usersdb'
@@ -127,23 +127,3 @@ def logout():
         flash("You have been logged out!","warning")
     session.pop("user", None)
     return redirect(url_for("login"))
-
-<<<<<<< HEAD
-@app.route('/logtrial', methods=['GET', 'POST'])
-def logtrial():
-    return render_template('homesite/login.html')
-
-=======
-@app.route('/logtrial', methods=['POST', 'GET'])
-def logtrial():
-    if request.method == "POST":
-        details = request.form
-        username = details['username']
-        password = details['password']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO usersreg(username, password) VALUES (%s, %s)", (username, password))
-        mysql.connection.commit()
-        cur.close()
-        return 'success'
-    return render_template('homesite/login.html')
->>>>>>> 2d715c0bab8055b6bff9408d65295989e7e38554
