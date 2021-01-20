@@ -128,12 +128,6 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
-<<<<<<< HEAD
-@app.route('/logtrial', methods=['GET', 'POST'])
-def logtrial():
-    return render_template('homesite/login.html')
-
-=======
 @app.route('/logtrial', methods=['POST', 'GET'])
 def logtrial():
     if request.method == "POST":
@@ -146,4 +140,4 @@ def logtrial():
         cur.close()
         return 'success'
     return render_template('homesite/login.html')
->>>>>>> 2d715c0bab8055b6bff9408d65295989e7e38554
+
