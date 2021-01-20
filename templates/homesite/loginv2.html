@@ -171,7 +171,7 @@ p.show{
         <label>Satisfaction Level</label>
         <input type="radio" id="love" value="love" name="satisfaction"><label for="love" class="light">Loved it</label><br/>
         <input type="radio" id="meh" value="meh" name="satisfaction"><label for="meh" class="light">Meh...</label><br/>
-        <input type="radio" id="hate" value="dislike" name="satisfaction"><label for="hate" class="light">Hated it</label><br/>
+        <input type="radio" id="hate" value="hate" name="satisfaction"><label for="hate" class="light">Hated it</label><br/>
 
         <!-- this is an example of the pattern attribute:  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" this could be used to force the user to use the proper format -->
         <!-- same for minlength and maxlength: minlength="8" maxlength="20" we're using JS to do this.-->
@@ -189,129 +189,7 @@ p.show{
      using JS to add novalidate into the form attribute so that we can use HTML5 validation as a fallback if someone is not allowing JS on their page.
     -->
 
-    <script type="text/javascript">
-    'use strict'; //ensures we are using the most modern JS interpreter available to the browser. And keeps us on our toes for best practices.
 
-//variables at the top ensure the whole program has access to them.
-    // const pass = document.querySelector('#password');
-    const show = document.querySelector('p.show');
-    const form = document.querySelector('#sign-up');
-    const errorDiv = document.querySelector('.error');
-    // const phone = document.querySelector('#phone');
-    const name = document.querySelector('#name');
-    const email = document.querySelector('#email');
-    form.setAttribute('novalidate', 'novalidate');
-
-
-/* #1 problem for people is passwords. Sometimes they fatfinger their phone or keyboard and mis-type their password and cannot get into their account. This functionality lets them see what they typed. Passwords are just obsured, not encrypted and not more secure than a regular text box. Good practice is to store them with a hash in a db */
-    //event listener for a password viewing toggle.
-    show.addEventListener('click', function(){
-        //the keyword: this is the item that was clicked. this can be used in other context and can be tricky. Use with care.
-
-        let text = this.textContent; //gets the current text value of the show element
-         //compares the value of the text
-        if(text === 'show password'){
-            this.textContent = 'hide password'; //sets the value of the text
-            pass.setAttribute('type', 'text'); //sets the type of input the password input box is.
-        }else{
-            this.textContent = 'show password';
-            pass.setAttribute('type', 'password');
-        }
-
-    })
-
-    //form validation:
-    //this event listener is attached to the form and listens for the submit event
-    form.addEventListener('submit', function(event){
-        //the event parameter/variable works like a local variable to capture the event object, which has lots of information about the event that occured. By having access to the event obect we can access its properties and methods.
-            let errors = []; //this is an empty array. it is here to store any error messages we need to output to the page to let the user know he needs to fix.
-            let nameVal = name.value.trim();
-            let emailVal = email.value.trim();
-            // let phoneVal = phone.value.trim();
-            // let passVal = password.value.trim(); //trim clears whitespace on both sides of entry. " password " becomes "password"
-            //once these have been trimmed reinsert these values into the value attribute:
-            name.value = nameVal;
-            email.value = emailVal;
-            pass.value = passVal;
-            // phone.value = phoneVal;
-
-            //cannot place a required attribute on these, so I need to check to see if at least one is checked.
-            let radioButtons = document.querySelectorAll('[type="radio"]'); //all the radio buttons
-            let checkboxes = document.querySelectorAll('[type="checkbox"]'); //all the checkboxes
-
-            if(nameVal === '' || nameVal == null){
-                errors.push('Name is required')
-            }
-
-            if(emailVal === '' || emailVal == null){
-                errors.push('email is required')
-            }else{
-                //we know we have a value... let's check to see if it is a good one.
-                let atPos = emailVal.indexOf('@');
-                let dotPos = emailVal.lastIndexOf('.');
-                //check to see if that value is valid
-                if(atPos < 1 || (dotPos - atPos < 2)){
-                    errors.push('Please enter a proper email address.')
-                }
-            }
-
-            if(phoneVal === '' || phoneVal == null){
-                //nothing was entered into the name field.
-                errors.push('Phone is required. ')
-            }else if(phoneVal.length < 10 ){
-                //less than 10, incomplete
-                errors.push('Your phone number seems incomplete. Please check.'); //push is a method to add items to an array.
-            }else if(phoneVal.length > 12){
-                errors.push('Your phone number seems too long. Please check.')
-            }
-
-            if(passVal === '' || passVal == null){
-                //nothing was entered into the name field.
-                errors.push('Password is required. ');
-            }else if(passVal.length < 8 || passVal.length > 20){
-                errors.push('password must be between 8 and 20 characters long.')
-            }
-
-            if(! isChecked(radioButtons)){
-                console.log('false');
-                errors.push('Please put a satisfaction level.')
-            }
-
-            if(! isChecked(checkboxes)){
-                console.log('false');
-                errors.push('you need to select an interest');
-            }
-
-            if(errors.length > 0){
-                //this means we have at least one error message. So we need to prevent the form from submitting.
-                event.preventDefault(); //this is a method that prevents the event's typical behavior. So in this case we are preventing the page from submitting like it normally would.
-                //now we want to let the user know that they need to fill out stuff before they resubmit.
-                //populate the errorDiv with the content we want:
-                errorDiv.innerHTML = errors.join('<br>');
-
-            }
-
-    })
-
-/*
-    function to check if an item within a set of elements have a checked property
-    @parm: set - an array or array like set of elements
-    @return - true or false based on if at least one set of elements has the checked property.
-
-*/
-
-    function isChecked(set){
-        let check = false;
-        for(var i = 0; i < set.length; i++){
-            if(set[i].checked === true && check === false){
-                check = true;
-                break;
-            }
-        }
-        return check;
-    }
-
-</script>
 {% endblock %}
 
 </body>
