@@ -21,7 +21,7 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
     return db
 
-app.config['MYSQL_HOST'] = '192.168.1.85'
+app.config['MYSQL_HOST'] = '76.176.54.2'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'sushi'
 app.config['MYSQL_DB'] = 'usersdb'
@@ -127,6 +127,7 @@ def logout():
         flash("You have been logged out!","warning")
     session.pop("user", None)
     return redirect(url_for("login"))
+<<<<<<< HEAD
 
 @app.route('/logtrial', methods=['POST', 'GET'])
 def logtrial():
@@ -141,3 +142,5 @@ def logtrial():
         return 'success'
     return render_template('homesite/login.html')
 
+=======
+>>>>>>> 3b91d9ea6e3922bcf3b5ec630cf60d52664fef74
