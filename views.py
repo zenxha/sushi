@@ -7,7 +7,7 @@ from flask import render_template, request, redirect, url_for, session, flash
 
 from __init__ import app
 
-backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
+backgrounds = ["https://www.reddit.com/r/Animewallpaper/search.rss?q=flair_name%3A%22Desktop%22&restrict_sr=1"]
 
 pathForImages='./images/'
 
