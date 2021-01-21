@@ -4,7 +4,6 @@ import random
 import sqlite3
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
 from werkzeug.utils import secure_filename
-from __init__ import app
 from db import db_init, db
 from model import Review
 app = Flask(__name__)
@@ -18,7 +17,7 @@ db_init(app)
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
-
+"""
 DATABASE = 'templates/homesite/Users.db'
 def get_db():
     db = getattr(g, '_database', None)
@@ -31,6 +30,7 @@ def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
+        """
 @app.route('/')
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
