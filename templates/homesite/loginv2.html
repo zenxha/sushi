@@ -160,13 +160,12 @@ p.show{
         <textarea name="content" required placeholder="Write your review here..."form="sign-up"></textarea>
         <!--upload part-->
 
-        <div class="form-group">
-            <label>Select image</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" enctype="multipart/form-data" name="image" id="image">
-            </div>
-        </div>
 
+            <label>Select image</label>
+
+                <input type="file" class="custom-file-input" enctype="multipart/form-data" name="image" id="image" form="sign-up" required>
+
+        <br>
         <br>
         <label>Satisfaction Level</label>
         <input type="radio" id="love" value="love" name="satisfaction" required><label for="love" class="light">Loved it</label><br/>

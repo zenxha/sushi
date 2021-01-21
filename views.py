@@ -53,21 +53,6 @@ def base():
 def slideshow():
     return render_template("homesite/slideshow.html")
 
-app.config["IMAGE_UPLOADS"]="/images"
-
-'''@app.route("/upload", methods=["GET", "POST"])'''
-def upload_image():
-    if request.method == "POST":
-
-        if request.files:
-            image = request.files["image"]
-            image.save(pathForImages + image.filename)
-            print('A user uploaded a file with the name of ' + image.filename)
-            return redirect(request.url)
-
-    return render_template("homesite/upload.html")
-
-
 "Login Section"
 
 @app.route('/login', methods=["POST", "GET"])
@@ -89,15 +74,22 @@ def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
         name = request.form["user_name"]
+        username = request.form["user_name"]
         satisfaction = request.form["satisfaction"]
+        content = request.form["content"]
+        image = request.files.get('image')
+        if not image:
+            return 'Please upload an image!', 400
 
-        if request.files:
-            image = request.files["image"]
-            image.save(pathForImages + image.filename)
+        filename = secure_filename(image.filename)
+        mimetype = image.mimetype
+        if not filename or not mimetype:
+            return 'Bad upload', 400
 
-            print(name + ' uploaded a file with the name of ' + image.filename + '\n' + "satisfaction level " + satisfaction)
-            return redirect(request.url)
-
+        review = Review(username=name, content=content, img=image.read(), filename=filename, mimetype=mimetype)
+        db.session.add(review)
+        db.session.commit()
+        return redirect(url_for(index))
     return render_template("homesite/loginv2.html", background=background)
 @app.route('/signup')
 @app.route('/user')
