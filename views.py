@@ -5,7 +5,8 @@ import sqlite3
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
 from werkzeug.utils import secure_filename
 from __init__ import app
-
+from db import db_init, db
+from model import Review
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///img.db'
