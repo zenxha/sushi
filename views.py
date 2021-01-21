@@ -43,7 +43,7 @@ def index():
 
 @app.route('/project')
 def project():
-    return render_template("homesite/project.html")
+    return render_template("homesite/project.html", background=random.choice(backgrounds))
 
 @app.route('/base')
 def base():
@@ -77,9 +77,9 @@ def upload():
         username = request.form["user_name"]
         satisfaction = request.form["satisfaction"]
         content = request.form["content"]
-        image = request.files.get('image')
+        image = request.files.get('img')
         if not image:
-            return 'Please upload an image!', 400
+            return 'bad news ur image didnt make it to our servers :((((', 400
 
         filename = secure_filename(image.filename)
         mimetype = image.mimetype
