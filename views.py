@@ -2,17 +2,22 @@
 import json
 import random
 import sqlite3
-from flask import g
-from flask import render_template, request, redirect, url_for, session, flash
-
+from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
+from werkzeug.utils import secure_filename
 from __init__ import app
+
+app = Flask(__name__)
+# SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///img.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db_init(app)
+
+
 
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
 
-f = open('data.json')
-data = json.load(f)
 DATABASE = 'templates/homesite/Users.db'
 def get_db():
     db = getattr(g, '_database', None)
@@ -82,12 +87,13 @@ def login():
 def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
-        print("lol")
+        name = request.form["user_name"]
+        satisfaction = request.form["satisfaction"]
+
         if request.files:
             image = request.files["image"]
             image.save(pathForImages + image.filename)
-            name = request.form["user_name"]
-            satisfaction = request.form["satisfaction"]
+
             print(name + ' uploaded a file with the name of ' + image.filename + '\n' + "satisfaction level " + satisfaction)
             return redirect(request.url)
 
