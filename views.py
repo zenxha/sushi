@@ -1,18 +1,27 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
 import json
 import random
+import requests
 import sqlite3
 from flask import g
 from flask import render_template, request, redirect, url_for, session, flash
 #from flask_mysqldb import MySQL
 from __init__ import app
+from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
+from werkzeug.utils import secure_filename
+from db import db_init, db
+from model import Review
+app = Flask(__name__)
+# SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///img.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db_init(app)
+
 
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
-
-f = open('data.json')
-data = json.load(f)
+"""
 DATABASE = 'templates/homesite/Users.db'
 def get_db():
     db = getattr(g, '_database', None)
@@ -20,6 +29,7 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
     return db
 
+<<<<<<< HEAD
 app.config['MYSQL_HOST'] = '76.176.54.2'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'sushi'
@@ -27,24 +37,30 @@ app.config['MYSQL_DB'] = 'usersdb'
 
 #mysql = MySQL(app)
 
+=======
+>>>>>>> 49a86ecffd9c006a400e32eccb62b5b2218ed822
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
+        """
 @app.route('/')
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
     # background = response.json()['url']
+    response = requests.get('https://api.quotable.io/random')
+    quote = response.json()['content']
+    author = response.json()['author']
     background = random.choice(backgrounds)
-    return render_template("homesite/home.html", background=background)
+    return render_template("homesite/home.html", background=background, quote=quote, author = author)
 
 
 """our own project dstufsuf as"""
 
 @app.route('/project')
 def project():
-    return render_template("homesite/project.html")
+    return render_template("homesite/project.html", background=random.choice(backgrounds))
 
 @app.route('/base')
 def base():
@@ -54,60 +70,43 @@ def base():
 def slideshow():
     return render_template("homesite/slideshow.html")
 
-app.config["IMAGE_UPLOADS"]="/images"
-
-'''@app.route("/upload", methods=["GET", "POST"])'''
-def upload_image():
-    if request.method == "POST":
-
-        if request.files:
-            image = request.files["image"]
-            image.save(pathForImages + image.filename)
-            print('A user uploaded a file with the name of ' + image.filename)
-            return redirect(request.url)
-
-    return render_template("homesite/upload.html")
-
-
 "Login Section"
 
 @app.route('/login', methods=["POST", "GET"])
 def login():
     background = random.choice(backgrounds)
     if request.method == "POST":
-        details = request.form
-        username = details['username']
-        password = details['password']
-        cur = mysql.connector.connect(database='usersdb')
-        cursor = cur.cursor()
-        cur.execute("INSERT INTO usersreg(username, password) VALUES (%s, %s)", (username, password))
-        mysql.connection.commit()
-        cur.close()
-        return 'success'
-#    if request.method == "POST":
-#        session.permanent = True
-#        user = request.form["username"]
-#        session["user"] = user
-#        flash("Login Successful!")
-#        return redirect(url_for("user"))
-#    else:
-#        if "user" in session:
-#            flash("Already Logged In!")
-#            return redirect(url_for("user"))
-    return render_template("homesite/login.html", background=background)
+        session.permanent = True
+        user = request.form["username"]
+        session["user"] = user
+        flash("Login Successful!")
+        return redirect(url_for("user"))
+    else:
+        if "user" in session:
+            flash("Already Logged In!")
+            return redirect(url_for("user"))
+        return render_template("homesite/login.html", background=background)
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
-        print("lol")
-        if request.files:
-            image = request.files["image"]
-            image.save(pathForImages + image.filename)
-            name = request.form["user_name"]
-            satisfaction = request.form["satisfaction"]
-            print(name + ' uploaded a file with the name of ' + image.filename + '\n' + "satisfaction level " + satisfaction)
-            return redirect(request.url)
+        name = request.form["user_name"]
+        username = request.form["user_name"]
+        satisfaction = request.form["satisfaction"]
+        content = request.form["content"]
+        image = request.files.get('img')
+        if not image:
+            return 'bad news ur image didnt make it to our servers :((((', 400
 
+        filename = secure_filename(image.filename)
+        mimetype = image.mimetype
+        if not filename or not mimetype:
+            return 'Bad upload', 400
+
+        review = Review(username=name, content=content, img=image.read(), filename=filename, mimetype=mimetype)
+        db.session.add(review)
+        db.session.commit()
+        return redirect(url_for(index))
     return render_template("homesite/loginv2.html", background=background)
 @app.route('/signup')
 @app.route('/user')
@@ -126,4 +125,3 @@ def logout():
         flash("You have been logged out!","warning")
     session.pop("user", None)
     return redirect(url_for("login"))
-
