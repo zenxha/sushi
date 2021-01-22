@@ -95,6 +95,15 @@ def upload():
         db.session.commit()
         return redirect(url_for("index"))
     return render_template("homesite/loginv2.html", background=background)
+
+@app.route('/images/<int:id>')
+def get_img(id):
+    img = Review.query.filter_by(id=id).first()
+    if not img:
+        return 'No img with that id', 200
+
+    return Response(img.img, mimetype=img.mimetype)
+
 @app.route('/signup')
 @app.route('/user')
 def user():
