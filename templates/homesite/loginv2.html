@@ -81,7 +81,6 @@ button {
   font-style: normal;
   border-radius: 5px;
   width: 100%;
-  border: 1px solid #3ac162;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   margin-bottom: 10px;
@@ -118,7 +117,7 @@ p.show{
 }
 
 .number {
-  background-color: #5fcf80;
+  background-color: #c372f2;
   color: #fff;
   height: 30px;
   width: 30px;
@@ -147,7 +146,7 @@ p.show{
  using JS to add novalidate into the form attribute so that we can use HTML5 validation as a fallback if someone is not allowing JS on their page.
 -->
 
-<form action="/upload" method="POST" id="sign-up">
+<form action="/upload" method="POST" id="sign-up" enctype="multipart/form-data">
     <h1>Draft review</h1>
     <fieldset>
         <!-- made these fields required -->
@@ -163,7 +162,7 @@ p.show{
 
             <label>Select image</label>
 
-                <input type="file" class="custom-file-input" enctype="multipart/form-data" name="img" id="image" form="sign-up" required>
+                <input type="file" class="custom-file-input" name="img" id="image" form="sign-up" required>
 
         <br>
         <br>
