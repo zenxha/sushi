@@ -1,6 +1,7 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
 import json
 import random
+import requests
 import sqlite3
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
 from werkzeug.utils import secure_filename
@@ -35,8 +36,11 @@ def close_connection(exception):
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
     # background = response.json()['url']
+    response = requests.get('https://api.quotable.io/random')
+    quote = response.json()['content']
+    author = response.json()['author']
     background = random.choice(backgrounds)
-    return render_template("homesite/home.html", background=background)
+    return render_template("homesite/home.html", background=background, quote=quote, author = author)
 
 
 """our own project dstufsuf as"""
