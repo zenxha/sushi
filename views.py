@@ -93,7 +93,7 @@ def upload():
         review = Review(username=name, content=content, img=image.read(), filename=filename, mimetype=mimetype)
         db.session.add(review)
         db.session.commit()
-        return redirect(url_for(index))
+        return redirect(url_for("index"))
     return render_template("homesite/loginv2.html", background=background)
 @app.route('/signup')
 @app.route('/user')

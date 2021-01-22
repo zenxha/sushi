@@ -147,7 +147,7 @@ p.show{
  using JS to add novalidate into the form attribute so that we can use HTML5 validation as a fallback if someone is not allowing JS on their page.
 -->
 
-<form action="/upload" method="POST" id="sign-up">
+<form action="/upload" method="POST" id="sign-up" enctype="multipart/form-data">
     <h1>Draft review</h1>
     <fieldset>
         <!-- made these fields required -->
@@ -163,7 +163,7 @@ p.show{
 
             <label>Select image</label>
 
-                <input type="file" class="custom-file-input" enctype="multipart/form-data" name="img" id="image" form="sign-up" required>
+                <input type="file" class="custom-file-input" name="img" id="image" form="sign-up" required>
 
         <br>
         <br>
