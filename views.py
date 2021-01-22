@@ -4,7 +4,7 @@ import random
 import sqlite3
 from flask import g
 from flask import render_template, request, redirect, url_for, session, flash
-from flask_mysqldb import MySQL
+#from flask_mysqldb import MySQL
 from __init__ import app
 
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
@@ -25,7 +25,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'sushi'
 app.config['MYSQL_DB'] = 'usersdb'
 
-mysql = MySQL(app)
+#mysql = MySQL(app)
 
 @app.teardown_appcontext
 def close_connection(exception):
