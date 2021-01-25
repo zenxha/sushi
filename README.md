@@ -4,7 +4,7 @@ Group Project for tri2!
 ### Links
 - [Project Board](https://github.com/zenxha/sushi/projects/1)
 - [Week 1/15 Project Board](https://github.com/zenxha/sushi/projects/2)
-- [Runtime Link](rubinfamily.dyndns.org:5000)
+- [Runtime Link](http://rubinfamily.dyndns.org:5000/)
 
 ### Collaborators
 - Allen Xu ID: #72947445
