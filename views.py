@@ -64,7 +64,7 @@ def project():
 
 @app.route('/base')
 def base():
-  return render_template("homesite/base2.html")
+  return render_template("homesite/base.html")
 
 @app.route('/slideshow')
 def slideshow():
@@ -95,7 +95,7 @@ def upload():
         content = request.form["content"]
         image = request.files.get('img')
         if name == "mort":
-            return redirect('https://cumz.one/2vUcZX6.mp4')
+            return redirect('homesite/base.html')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
