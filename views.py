@@ -91,10 +91,11 @@ def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
         name = request.form["user_name"]
-        username = request.form["user_name"]
         satisfaction = request.form["satisfaction"]
         content = request.form["content"]
         image = request.files.get('img')
+        if name == "mort":
+            return "easter egg"
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
