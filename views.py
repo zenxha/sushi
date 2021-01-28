@@ -6,7 +6,7 @@ import sqlite3
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
 from werkzeug.utils import secure_filename
 from db import db_init, db
-from model import Review
+from model import Review, Authentication
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///img.db'
@@ -63,11 +63,13 @@ def slideshow():
 def login():
     background = random.choice(backgrounds)
     if request.method == "POST":
-        session.permanent = True
-        user = request.form["username"]
-        session["user"] = user
+        username = request.form["username"]
+        password = request.form["password"]
+        authentication = Authentication(username=username, password=password)
+        db.session.add(authentication)
+        db.session.commit()
         flash("Login Successful!")
-        return redirect(url_for("user"))
+        return reedirect(url_for("user"))
     else:
         if "user" in session:
             flash("Already Logged In!")
