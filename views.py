@@ -3,16 +3,19 @@ import json
 import random
 import requests
 import sqlite3
+from flask import g
+from flask import render_template, request, redirect, url_for, session, flash
+#from flask_mysqldb import MySQL
+from __init__ import app
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
 from werkzeug.utils import secure_filename
 from db import db_init, db
 from model import Review, Authentication
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///img.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db_init(app)
-
 
 
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
@@ -26,6 +29,16 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
     return db
 
+<<<<<<< HEAD
+app.config['MYSQL_HOST'] = '76.176.54.2'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'sushi'
+app.config['MYSQL_DB'] = 'usersdb'
+
+#mysql = MySQL(app)
+
+=======
+>>>>>>> 49a86ecffd9c006a400e32eccb62b5b2218ed822
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
@@ -51,7 +64,7 @@ def project():
 
 @app.route('/base')
 def base():
-  return render_template("homesite/base2.html")
+  return render_template("homesite/base.html")
 
 @app.route('/slideshow')
 def slideshow():
@@ -75,15 +88,17 @@ def login():
             flash("Already Logged In!")
             return redirect(url_for("user"))
         return render_template("homesite/login.html", background=background)
+
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
         name = request.form["user_name"]
-        username = request.form["user_name"]
         satisfaction = request.form["satisfaction"]
         content = request.form["content"]
         image = request.files.get('img')
+        if name == "mort":
+            return redirect('/base')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
