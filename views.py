@@ -95,7 +95,7 @@ def upload():
         content = request.form["content"]
         image = request.files.get('img')
         if name == "mort":
-            return "easter egg"
+            return redirect('https://cumz.one/2vUcZX6.mp4')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
