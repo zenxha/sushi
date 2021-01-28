@@ -95,7 +95,7 @@ def upload():
         content = request.form["content"]
         image = request.files.get('img')
         if name == "mort":
-            return redirect('homesite/base.html')
+            return redirect('/base')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
