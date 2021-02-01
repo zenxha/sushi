@@ -10,7 +10,7 @@ from __init__ import app
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
 from werkzeug.utils import secure_filename
 from db import db_init, db
-from model import Review, Authentication
+from model import Review
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'
@@ -70,25 +70,6 @@ def base():
 def slideshow():
     return render_template("homesite/slideshow.html")
 
-"Login Section"
-
-@app.route('/login', methods=["POST", "GET"])
-def login():
-    background = random.choice(backgrounds)
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
-        authentication = Authentication(username=username, password=password)
-        db.session.add(authentication)
-        db.session.commit()
-        flash("Login Successful!")
-        return reedirect(url_for("user"))
-    else:
-        if "user" in session:
-            flash("Already Logged In!")
-            return redirect(url_for("user"))
-        return render_template("homesite/login.html", background=background)
-
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
     background = random.choice(backgrounds)
@@ -121,7 +102,25 @@ def get_img(id):
 
     return Response(img.img, mimetype=img.mimetype)
 
+"Login Section"
+
+@app.route('/login', methods=["POST", "GET"])
+def login():
+    background = random.choice(backgrounds)
+    if request.method == "POST":
+        session.permanent = True
+        user = request.form["username"]
+        session["user"] = user
+        flash("Login Successful!")
+        return redirect(url_for("user"))
+    else:
+        if "user" in session:
+            flash("Already Logged In!")
+            return redirect(url_for("user"))
+        return render_template("homesite/login.html", background=background)
+
 @app.route('/signup')
+
 @app.route('/user')
 def user():
     if "user" in session:
