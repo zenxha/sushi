@@ -70,23 +70,6 @@ def base():
 def slideshow():
     return render_template("homesite/slideshow.html")
 
-"Login Section"
-
-@app.route('/login', methods=["POST", "GET"])
-def login():
-    background = random.choice(backgrounds)
-    if request.method == "POST":
-        session.permanent = True
-        user = request.form["username"]
-        session["user"] = user
-        flash("Login Successful!")
-        return redirect(url_for("user"))
-    else:
-        if "user" in session:
-            flash("Already Logged In!")
-            return redirect(url_for("user"))
-        return render_template("homesite/login.html", background=background)
-
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
     background = random.choice(backgrounds)
@@ -116,6 +99,24 @@ def get_img(id):
     img = Review.query.filter_by(id=id).first()
     if not img:
         return 'No img with that id', 200
+
+"Login Section"
+
+@app.route('/login', methods=["POST", "GET"])
+def login():
+    background = random.choice(backgrounds)
+    if request.method == "POST":
+        session.permanent = True
+        user = request.form["username"]
+        session["user"] = user
+        flash("Login Successful!")
+        return redirect(url_for("user"))
+    else:
+        if "user" in session:
+            flash("Already Logged In!")
+            return redirect(url_for("user"))
+        return render_template("homesite/login.html", background=background)
+
 
     return Response(img.img, mimetype=img.mimetype)
 
