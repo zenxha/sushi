@@ -10,112 +10,89 @@
   </head>
 
   <body>
-    <!-- Created by Chris Rubin -->
     <div class="navbar">
+        <p>Easter Egg</p>
         <div class="row justify-content-center">
-            <a href="/">Return to Home</a>
-            <a href="">AP Prep Materials</a>
-            <a href="/base">TBD</a>
-        </div>
-        <div class="row justify-content-center">
-            <div class="dropdown">
-                <button class="dropbtn" onclick="myFunction()">TBD
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                    <a href="/hello/">Hello Series</a>
-                    <a href="/flask/">Flask Series</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        <ul>
+            <li><a href="/">Return to Home</a></li>
+            <li><a href="#">Who is Sushi</a>
+                <ul>
+                    <li><a href="#">Who Is Allen</a></li>
+                    <li><a href="#">Who Is Chris</a></li>
+                    <li><a href="#">Who Is Devam</a></li>
+                    <li><a href="#">Who is Komay</a></li>
+                </ul>
+            </li>
 
-  <div>
-    {% block style %}
-      <div class="product" style="margin-top: 2%;">
-        <div style="background-color:white;padding:2%;">
-        <div style="color:black; text-align:center;">
-          <h1>
-          {% block text %}
-          EASTER EGG!
-          {% endblock %}
-          </h1>
+        </ul>
         </div>
-      </div>
-    {% endblock %}
     </div>
-  </div>
+    <body>
+
 
 
   {% block body %}
   {% endblock %}
 
   <style>
-      .navbar {
-        background:transparent;
-        overflow: none;
+    body {
+        background-image: url(https://static.vecteezy.com/system/resources/previews/000/345/052/original/easter-eggs-in-grass-on-a-white-background-vector.jpg);
+        background-size: cover;
+    }
+
+    .navbar{
         width: 100%;
-        background-color: #000000;
-        font-family: Arial, Helvetica, sans-serif;
-      }
+        height: 60px;
+        background-color: #fff;
 
-      .navbar a {
-        float: left;
-        font-size: 16px;
-        color: black;
-        text-align: right;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
+    }
 
-      .dropdown {
+    .navbar p{
+        font-family: arial;
+        color: #222;
+        font-size: 20px;
+        line-height: 25px;
         float: left;
-        overflow: none;
+        padding: 0px 10px;
+    }
+
+    .navbar ul{
+        float: left;
+    }
+
+    .navbar ul li{
+        float: left;
+        list-style: none;
         position: relative;
-        display: inline-block;
-      }
+    }
 
-      .dropdown .dropbtn {
-        cursor: pointer;
+    .navbar ul li a {
+        display: block;
+        font-family: arial;
+        color: #222;
         font-size: 16px;
-        border: none;
-        outline: none;
-        color: black;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-      }
-
-      .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-        background-color: red;
-      }
-
-      .dropdown-content {
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+    .navbar ul li ul {
         display: none;
         position: absolute;
-        background-color: #000000;
-
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-
-      .dropdown-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 40px;
+    }
+     .navbar ul li:hover ul {
         display: block;
-        text-align: left;
-        font-size: 11px;
-      }
+    }
+    .navbar ul li ul{
+        width: 140px;
+        border-radius: 0px 0px 4px 4px ;
+    }
 
-      .dropdown-content a:hover {
-        background-color: red;
-        display: block
-      }
-
-      .show {
-        display: block;
-      }
+    .navbar ul li ul li a{
+        padding: 8px 15px;
+    }
+    .navbar ul li ul li a:hover {
+        background-color: #f3f3f3
+    }
   </style>
