@@ -4,13 +4,16 @@ import random
 import requests
 import sqlite3
 from flask import g
-from flask import render_template, request, redirect, url_for, session, flash
+from flask import render_template, request, redirect, url_for, session, flash, Flask, Response, Blueprint
 #from flask_mysqldb import MySQL
 from __init__ import app
-from flask import render_template, request, redirect, url_for, session, flash, Flask, Response
+from flask_login import login_required, current_user, login_user, LoginManager
+from werkzeug.security import generate_password_hash
 from werkzeug.utils import secure_filename
 from db import db_init, db
 from model import Review
+
+
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'
@@ -128,6 +131,7 @@ def profile(id):
 
 
 @app.route('/signup')
+
 
 @app.route('/user')
 def user():
