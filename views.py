@@ -52,7 +52,7 @@ def close_connection(exception):
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
     # background = response.json()['url']
-    response = requests.get('https://api.quotable.io/random')
+    response = requests.get('https://api.quotable.io/random?maxLength=60')
     quote = response.json()['content']
     author = response.json()['author']
     background = random.choice(backgrounds)
