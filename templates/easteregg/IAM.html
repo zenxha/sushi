@@ -1,187 +1,103 @@
 <!DOCTYPE html>
 
-{% extends "eastergg/base.html" %}
+{% extends "easteregg/base.html" %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="profile-card">
-    <div class="card-header">
-        <div class="pic">
-            <img src="pic.png" alt="">
-        </div>
-        <div class="name">John Doe</div>
-        <div class="desc">Developer & Designer</div>
-        <div class="sm">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-github"></a>
-            <a href="#" class="fab fa-youtube"></a>
-        </div>
-        <a href="#" class="contact-btn">Contact Me</a>
+{% block body %}
+<div class="header">
+    <h1>Who is P5 Sushi?</h1>
+</div>
+
+
+<div class="row">
+    <div class="column">
+        <img src="https://i.pinimg.com/originals/d0/aa/21/d0aa21ad69cc2eeeb339f848da812c39.jpg">
+            <p>ALLEN</p>
+            <ul>
+                <li>I can setup and build a Python/Flask web server</li>
+                <li>I can develop web simple frontends  using HTML, CSS, and BootStrap.</li>
+                <li>I know Database concepts like setting up models and tables to store user data such as emails</li>
+            </ul>
     </div>
-    <div class="card-footer">
-        <div class="numbers">
-            <div class="item">
-                <span>120</span>
-                Posts
-            </div>
-            <div class="border"></div>
-            <div class="item">
-                <span>127</span>
-                Following
-            </div>
-            <div class="border"></div>
-            <div class="item">
-                <span>120K</span>
-                Followers
-            </div>
-        </div>
+    <div class="column">
+        <img src="https://www.curiouscuisiniere.com/wp-content/uploads/2013/06/Japanese-Sushi-0458.450-450x270.jpg">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+    </div>
+    <div class="column">
+        <img src="https://c.ndtvimg.com/2019-09/tm8ef01_sushi_625x300_27_September_19.jpg">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+    </div>
+    <div class="column">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/19/3b/00/06/sushi-place.jpg">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
     </div>
 </div>
-</body>
-</html>
+
+{% endblock %}
 
 {% block style %}
+
 <style>
-    *{
-  margin: 0;
-  padding: 0;
-  font-family: "Ubuntu", sans-serif;
-  box-sizing: border-box;
-  text-decoration: none;
-}
+    .row {
+      padding: 5px;
+      text-align: center;
+      color: black;
+      font-size: 20px;
+    }
+    .header {
+      padding: 20px;
+      text-align: center;
+      color: black;
+      font-size: 20px;
+    }
+     .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
 
-body{
-  height: 100vh;
-  background: url(bg.jpg) no-repeat center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* Create four equal columns that sits next to each other */
+    .column {
+      flex: 20%;
+      max-width: 25%;
+      padding: 0 4px;
 
-.profile-card{
-  width: 400px;
-  text-align: center;
-  border-radius: 8px;
-  overflow: hidden;
-}
+    }
 
-.card-header{
-  background: #2c3a47;
-  padding: 60px 40px;
-}
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 50%;
+    }
 
-.pic{
-  display: inline-block;
-  padding: 8px;
-  background: linear-gradient(130deg, #74b9ff, #e66767);
-  margin: auto;
-  border-radius: 50%;
-  background-size: 200% 200%;
-  animation: animated-gradient 2s linear infinite;
-}
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
 
-@keyframes animated-gradient{
-  25%{
-    background-position: left bottom;
-  }
-  50%{
-    background-position: right bottom;
-  }
-  75%{
-    background-position: right top;
-  }
-  100%{
-    background-position: left top;
-  }
-}
-
-.pic img{
-  display: block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
-
-.name{
-  color: #f2f2f2;
-  font-size: 28px;
-  font-weight: 600;
-  margin: 10px 0;
-}
-
-.desc{
-  font-size: 18px;
-  color: #e66767;
-}
-
-.sm{
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.sm a{
-  color: #f2f2f2;
-  width: 56px;
-  font-size: 22px;
-  transition: .3s linear;
-}
-
-.sm a:hover{
-  color: #e66767;
-}
-
-.contact-btn{
-  display: inline-block;
-  padding: 12px 50px;
-  color: #e66767;
-  border: 2px solid #e66767;
-  border-radius: 6px;
-  margin-top: 16px;
-  transition: .3s linear;
-}
-
-.contact-btn:hover{
-  background: #e66767;
-  color: #f2f2f2;
-}
-
-.card-footer{
-  background: #f4f4f4;
-  padding: 60px 10px;
-}
-
-.numbers{
-  display: flex;
-  align-items: center;
-}
-
-.item{
-  flex: 1;
-  text-transform: uppercase;
-  font-size: 13px;
-  color: #e66767;
-}
-
-.item span{
-  display: block;
-  color: #2c3a47;
-  font-size: 30px;
-}
-
-.border{
-  width: 1px;
-  height: 30px;
-  background: #bbb;
-}
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
 </style>
 {% endblock %}

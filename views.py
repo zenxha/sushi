@@ -64,7 +64,7 @@ def project():
 
 @app.route('/IAM')
 def IAM():
-    return render_template("eastergg/IAM.html")
+    return render_template("easteregg/IAM.html")
 
 @app.route('/slideshow')
 def slideshow():
