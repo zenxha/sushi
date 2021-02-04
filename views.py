@@ -62,10 +62,6 @@ def index():
 def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
 
-@app.route('/base')
-def base():
-  return render_template("easteregg/base.html")
-
 @app.route('/IAM')
 def IAM():
     return render_template("eastergg/IAM.html")
@@ -83,7 +79,7 @@ def upload():
         content = request.form["content"]
         image = request.files.get('img')
         if name == "mort":
-            return redirect('/base')
+            return render_template('easteregg/base.html')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
@@ -122,6 +118,14 @@ def login():
             flash("Already Logged In!")
             return redirect(url_for("user"))
         return render_template("homesite/login.html", background=background)
+
+
+@app.route('/profile/<int:id>')
+def profile(id):
+    img = 2
+
+    return render_template("homesite/profile.html")
+
 
 @app.route('/signup')
 
