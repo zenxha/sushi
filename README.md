@@ -15,13 +15,13 @@ Group Project for tri2!
 ### Tickets this week
 - Allen
   - [Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)
-  - [Worked with Komay on creating method to access easter egg](https://github.com/zenxha/sushi/projects/4#card-53782464)
 - Chris
   - [Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53785877)
 - Devam
   - [Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)
 - Komay
-
+  - [Create Login and Email registration form for the front end and link the user input to the backend code](https://github.com/zenxha/sushi/projects/4#card-54354857)
+  - [Created method to access easter egg which only allows access with specific username](https://github.com/zenxha/sushi/projects/4#card-53782464)
 
 ### College Board Requirements
 - Instructions for input from one of the following:
