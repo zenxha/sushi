@@ -12,6 +12,16 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
+### Tickets this week
+- Allen
+  - [Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)
+  - [Worked with Komay on creating method to access easter egg](https://github.com/zenxha/sushi/projects/4#card-53782464)
+- Chris
+  -[Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53785877)
+- Devam
+- Komay
+
+
 ### College Board Requirements
 - Instructions for input from one of the following:
   - the user (including user actions that trigger events)
