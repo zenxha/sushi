@@ -90,7 +90,6 @@ def slideshow():
 @app.route('/upload', methods=["POST", 'GET'])
 @login_required
 def upload():
-    session['key'] = 'heyheyhey'
     background = random.choice(backgrounds)
     if request.method == "POST":
         name = request.form["user_name"]
