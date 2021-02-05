@@ -12,13 +12,8 @@ class Review(db.Model):
     filename = db.Column(db.Text, nullable=False)
     mimetype = db.Column(db.Text, nullable=False)
 
-class Authentication(db.Model):
-    username = db.Column(db.Integer, primary_key=True)
-    password = db.Column(db.Text, nullable=False)
-
 class User(UserMixin,db.Model):
     id = db.Column(db.Text, primary_key=True)
     username = db.Column(db.Text, nullable=False)
-    email = db.Column(db.Text, nullable=True)
     password = db.Column(db.Text, nullable=False)
 

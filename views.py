@@ -79,10 +79,6 @@ def index():
 def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
 
-@app.route('/IAM')
-def IAM():
-    return render_template("easteregg/IAM.html")
-
 @app.route('/slideshow')
 def slideshow():
     return render_template("homesite/slideshow.html")
@@ -96,7 +92,7 @@ def upload():
         content = request.form["content"]
         image = request.files.get('img')
         if name == "mort":
-            return render_template('easteregg/base.html')
+            return render_template('easteregg/IAM.html')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
@@ -152,7 +148,7 @@ def profile(id):
 @app.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
-        name = request.form.get('name')
+        name = request.form.get('username')
         password = request.form.get('password')
 
         user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
