@@ -88,7 +88,7 @@ def slideshow():
     return render_template("homesite/slideshow.html")
 
 @app.route('/upload', methods=["POST", 'GET'])
-@login_required
+
 def upload():
     session['key'] = 'heyheyhey'
     background = random.choice(backgrounds)
@@ -156,6 +156,7 @@ def signup():
     if request.method == 'POST':
         name = request.form.get('name')
         password = request.form.get('password')
+        email = request.form.get('email')
 
         user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
 
@@ -164,7 +165,7 @@ def signup():
             return redirect(url_for('signup'))
 
             # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-            new_user = User(username=name, password=generate_password_hash(password, method='sha256'))
+            new_user = User(username=name, email=email, password=generate_password_hash(password, method='sha256'))
 
             # add the new user to the database
             db.session.add(new_user)
