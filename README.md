@@ -13,6 +13,25 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
+### College Board Requirements
+- Instructions for input from one of the following:
+  - the user (including user actions that trigger events)
+  - a device
+  - an online data stream
+  - a file
+- Use of at least one list (or other collection type) to represent a collection of
+data that is stored and used to manage program complexity and help fulfill
+the program’s purpose
+- At least one procedure that contributes to the program’s intended purpose,
+where you have defined:
+  - the procedure’s name
+  - the return type (if necessary)
+  - one or more parameters
+- An algorithm that includes sequencing, selection, and iteration that is in the
+body of the selected procedure
+- Calls to your student-developed procedure
+- Instructions for output (tactile, audible, visual, or textual) based on input and
+program functionality
 ## Summary
 - We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post
 
