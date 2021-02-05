@@ -19,6 +19,7 @@ Group Project for tri2!
 - Chris
   - [Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53785877)
 - Devam
+  - [Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)
 - Komay
 
 
