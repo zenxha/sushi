@@ -134,11 +134,10 @@ def login_post():
         # if the above check passes, then we know the user has the right credentials
         user = User(username=name, id=id, password_hash=password)
         login_user(user, remember=remember)
-        return redirect(url_for('profile'))
+        return redirect(url_for('index'))
     return render_template('homesite/login.html')
 
 @app.route('/profile/<int:id>')
-@login_required
 def profile(id):
     img = 2
 
