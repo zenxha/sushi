@@ -16,7 +16,7 @@ Group Project for tri2!
 - Allen
   - [Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)
 - Chris
-  - [Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53785877)
+  - [Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53703118)
 - Devam
   - [Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)
 - Komay
