@@ -88,9 +88,7 @@ def slideshow():
     return render_template("homesite/slideshow.html")
 
 @app.route('/upload', methods=["POST", 'GET'])
-@login_required
 def upload():
-    session['key'] = 'heyheyhey'
     background = random.choice(backgrounds)
     if request.method == "POST":
         name = request.form["user_name"]
@@ -110,7 +108,7 @@ def upload():
         review = Review(username=name, content=content, img=image.read(), filename=filename, mimetype=mimetype)
         db.session.add(review)
         db.session.commit()
-        return redirect(url_for("index"))
+        return redirect(url_for("login_post"))
     return render_template("homesite/loginv2.html", background=background)
 
 @app.route('/images/<int:id>')
