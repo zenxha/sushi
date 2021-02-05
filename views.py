@@ -88,7 +88,6 @@ def slideshow():
     return render_template("homesite/slideshow.html")
 
 @app.route('/upload', methods=["POST", 'GET'])
-@login_required
 def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
