@@ -9,3 +9,7 @@ class Review(db.Model):
     img = db.Column(db.Text, unique=True, nullable=False)
     filename = db.Column(db.Text, nullable=False)
     mimetype = db.Column(db.Text, nullable=False)
+
+class Authentication(db.Model):
+    username = db.Column(db.Integer, primary_key=True)
+    password = db.Column(db.Text, nullable=False)
