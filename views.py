@@ -1,4 +1,5 @@
 """Views in MVC has responsibility for establishing routes and redering HTML"""
+from __init__ import create_app
 import json
 import random
 import requests
@@ -6,12 +7,12 @@ import sqlite3
 from flask import g
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response, Blueprint
 #from flask_mysqldb import MySQL
-from __init__ import app
-from flask_login import login_required, current_user, login_user, LoginManager
-from werkzeug.security import generate_password_hash
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import login_required, login_user, logout_user, current_user, LoginManager
+from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from db import db_init, db
-from model import Review
+from model import Review, User
 
 
 app = Flask(__name__)
@@ -20,6 +21,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db_init(app)
 
+db = SQLAlchemy()
 
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
@@ -48,6 +50,18 @@ def close_connection(exception):
     if db is not None:
         db.close()
         """
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(userid):
+    try:
+        return session.query(User).filter(User.id == userid).first()
+    except model.DoesNotExist :
+        return None
+
 @app.route('/')
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
@@ -74,7 +88,9 @@ def slideshow():
     return render_template("homesite/slideshow.html")
 
 @app.route('/upload', methods=["POST", 'GET'])
+@login_required
 def upload():
+    session['key'] = 'heyheyhey'
     background = random.choice(backgrounds)
     if request.method == "POST":
         name = request.form["user_name"]
@@ -108,44 +124,67 @@ def get_img(id):
 "Login Section"
 
 @app.route('/login', methods=["POST", "GET"])
-def login():
-    background = random.choice(backgrounds)
-    if request.method == "POST":
-        session.permanent = True
-        user = request.form["username"]
-        session["user"] = user
-        flash("Login Successful!")
-        return redirect(url_for("user"))
-    else:
-        if "user" in session:
-            flash("Already Logged In!")
-            return redirect(url_for("user"))
-        return render_template("homesite/login.html", background=background)
+def login_post():
+    name = request.form.get('username')
+    password = request.form.get('password')
+    remember = True if request.form.get('remember') else False
 
+    if request.method == "POST":
+        user = User.query.filter_by(username=name).first()
+
+    # check if the user actually exists
+    # take the user-supplied password, hash it, and compare it to the hashed password in the database
+        if not user or not check_password_hash(user.password, password):
+            flash('Please check your login details and try again.')
+            return redirect('/signup')
+        # if the above check passes, then we know the user has the right credentials
+        user = User(username=name, id=id, password=password)
+        login_user(user, remember=remember)
+        return redirect(url_for('profile'))
+    return render_template('homesite/login.html')
 
 @app.route('/profile/<int:id>')
+@login_required
 def profile(id):
     img = 2
 
-    return render_template("homesite/profile.html")
+    return render_template("homesite/profile.html", name=current_user.name)
 
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET','POST'])
+def signup():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        password = request.form.get('password')
 
+        user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
+
+        if user: # if a user is found, we want to redirect back to signup page so user can try again
+            flash('Email address already exists')
+            return redirect(url_for('signup'))
+
+            # create a new user with the form data. Hash the password so the plaintext version isn't saved.
+            new_user = User(username=name, password=generate_password_hash(password, method='sha256'))
+
+            # add the new user to the database
+            db.session.add(new_user)
+            db.session.commit()
+
+            return redirect(url_for(login_post))
+    return render_template('homesite/signup.html')
 
 @app.route('/user')
+@login_required
 def user():
     if "user" in session:
         user = session["user"]
         return render_template("homesite/user.html", user=user)
     else:
         flash("You are not logged in!")
-        return redirect(url_for("login"))
+        return redirect(url_for("login_post"))
 
 @app.route('/logout')
+@login_required
 def logout():
-    if "user" in session:
-        user = session["user"]
-        flash("You have been logged out!","warning")
-    session.pop("user", None)
-    return redirect(url_for("login"))
+    logout_user()
+    return redirect(url_for("index"))

@@ -1,4 +1,7 @@
 
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
+
 from db import db
 
 
@@ -10,7 +13,7 @@ class Review(db.Model):
     filename = db.Column(db.Text, nullable=False)
     mimetype = db.Column(db.Text, nullable=False)
 
-class Authentication(db.Model):
+class User(UserMixin,db.Model):
     id = db.Column(db.Text, primary_key=True)
     username = db.Column(db.Text, nullable=False)
     password = db.Column(db.Text, nullable=False)
