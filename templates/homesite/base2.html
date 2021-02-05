@@ -6,11 +6,19 @@
 			<li><a href="/">Home</a></li>
 			<li><a href="{{url_for("project")}}">Projects</a></li>
 			<li><a href="/upload">Upload</a></li>
-			<li><a href="/login">Login</a></li>
-			<li><a href="/logout">Logout</a></li>
+
+			{% if not current_user.is_authenticated %}
+			<li><a href="{{ url_for('login_post') }}">Login</a></li>
+			<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+			{% endif %}
+			{% if current_user.is_authenticated %}
+			<li><a href="{{ url_for('logout') }}">Logout</a></li>
+			{% endif %}
+
 			<li><a href="/slideshow">Sushis</a></li>
 		</ul>
 	</nav>
+
 	{% block title %} {% endblock %}
 	{% block body %} {% endblock %}
 	{% block content %} {%endblock %}
