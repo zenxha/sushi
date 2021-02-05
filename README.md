@@ -21,6 +21,7 @@ Group Project for tri2!
 - Devam
   - [Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)
 - Komay
+  - [Worked on integrating the backend login/auth system with the frontend html form](https://github.com/zenxha/sushi/projects/4#card-54354857)
 
 
 ### College Board Requirements
