@@ -14,6 +14,20 @@ Group Project for tri2!
 
 ### Week 2/8 Grading
 
+- Idea, Visuals, HTML, CSS, JS 5pts
+  - Idea
+  - Visuals
+  - HTML
+  - CSS
+  - JS
+- Routes, Model Code & CRUD 5pts
+  - Routes
+  - Model Code
+  - CRUD
+- Easter Egg 3 pts
+  - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
+- Project WOW 2 pts
+  - stuff
 
 
 ### Tickets this week
@@ -26,7 +40,6 @@ Group Project for tri2!
 - Komay
   - [Worked on integrating the backend login/auth system with the frontend html form](https://github.com/zenxha/sushi/projects/4#card-54354857)
   - [Finished 3rd checkbox of the ticket which only allows the correct account to access easteregg](https://github.com/zenxha/sushi/projects/4#card-53782464)
-
 
 ### College Board Requirements
 - Instructions for input from one of the following:
@@ -76,7 +89,6 @@ program functionality
   * Saved tier lists
   * Images to sushis submitted by the users (will include file size limiter, file type selector)
 
-
 ## Planned Features
 - Database of every sushi
   - Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering
@@ -85,26 +97,3 @@ program functionality
 - Library of all the tier lists other people have made that the user can browse
 - Redirects to social media to draft messages
 
-
-## Weekly Updates
-### Week 4
-- Upload page is fully functional, CSS will be incorporated later
-- Login working, sessions are saved in cookies, planning on adding a password function later on
-- Database working on Devam's individual github, will add to main github soon
-### Week 3
-- Continued work on upload page, mainly fixing file directory path and adding CSS
-- Continued work on log in page
-- Began using SQLite for database creation
-### Week 2
-- Changed backgorund to use an api for many different sushi pictures
-- Started work on an upload page that adds images into our database upload via user
-- Started work on a log in page for the site
-### Week 1
-- Added a navbar to the website
-- Added a custom moving background
-- Added a projects page which displays our project plan
-- Started work on the database setup
-### Week 0
-- Created README layout
-- Started storyboarding UI layouts for the website
-- Transfered information from google docs onto github readme
