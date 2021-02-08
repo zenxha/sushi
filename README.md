@@ -12,6 +12,10 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
+### Week 2/8 Grading
+
+
+
 ### Tickets this week
 - Allen
   - [Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)
@@ -43,11 +47,12 @@ body of the selected procedure
 - Calls to your student-developed procedure
 - Instructions for output (tactile, audible, visual, or textual) based on input and
 program functionality
-## Summary
+
+## Our Idea
 - We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post
 
 ## Things we want to have:
-- Database of every sushi
+- Database of user uploaded sushi images
 - Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering
 - Menu example: https://www.toasttab.com/rbsushi-ranchobernardo/v3
 - Login system that people can create/save accounts with
