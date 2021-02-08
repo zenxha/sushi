@@ -17,7 +17,7 @@ from model import Review, User
 
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db_init(app)
 
@@ -26,30 +26,8 @@ db = SQLAlchemy()
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
-"""
-DATABASE = 'templates/homesite/Users.db'
-def get_db():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-    return db
 
-<<<<<<< HEAD
-app.config['MYSQL_HOST'] = '76.176.54.2'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'sushi'
-app.config['MYSQL_DB'] = 'usersdb'
-
-#mysql = MySQL(app)
-
-=======
->>>>>>> 49a86ecffd9c006a400e32eccb62b5b2218ed822
-@app.teardown_appcontext
-def close_connection(exception):
-    db = getattr(g, '_database', None)
-    if db is not None:
-        db.close()
-        """
+DATABASE = 'templates/homesite/database.db'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -121,20 +99,7 @@ def get_img(id):
 def login_post():
     name = request.form.get('username')
     password = request.form.get('password')
-    remember = True if request.form.get('remember') else False
 
-    if request.method == "POST":
-        #user = User.query.filter_by(username=name).first()
-
-    # check if the user actually exists
-    # take the user-supplied password, hash it, and compare it to the hashed password in the database
-#        if not user or not check_password_hash(user.password, password):
-#            flash('Please check your login details and try again.')
-#            return redirect('/signup')
-        # if the above check passes, then we know the user has the right credentials
-        user = User(username=name, id=id, password_hash=password)
-        login_user(user, remember=remember)
-        return redirect(url_for('index'))
     return render_template('homesite/login.html')
 
 @app.route('/profile/<int:id>')
@@ -152,18 +117,6 @@ def signup():
         email = request.form.get('email')
         user = User.query.filter_by(username=username).first() # if this returns a user, then the email already exists in database
 
-        if user: # if a user is found, we want to redirect back to signup page so user can try again
-            flash('Email address already exists')
-            return redirect(url_for('signup'))
-
-            # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-            new_user = User(username=username, password_hash=password, email=email)
-
-            # add the new user to the database
-            db.session.add(new_user)
-            db.session.commit()
-
-            return redirect(url_for(login_post))
     return render_template('homesite/signup.html')
 
 @app.route('/user')
