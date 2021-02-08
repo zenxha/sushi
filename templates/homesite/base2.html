@@ -7,13 +7,13 @@
 			<li><a href="{{url_for('project')}}">Projects</a></li>
 			<li><a href="/upload">Upload</a></li>
 
-			{% if not current_user.is_authenticated %}
+
 			<li><a href="{{ url_for('login_post') }}">Login</a></li>
 			<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-			{% endif %}
-			{% if current_user.is_authenticated %}
+
+
 			<li><a href="{{ url_for('logout') }}">Logout</a></li>
-			{% endif %}
+
 
 			<li><a href="/slideshow">Sushis</a></li>
 		</ul>

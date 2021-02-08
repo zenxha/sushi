@@ -27,9 +27,6 @@ backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-w
 
 pathForImages='./images/'
 
-DATABASE = 'templates/homesite/database.db'
-
-
 @app.route('/')
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
@@ -95,8 +92,7 @@ def login_post():
 @app.route('/profile/<int:id>')
 def profile(id):
     img = 2
-
-    return render_template("homesite/profile.html", name=current_user.name)
+    return "o"
 
 
 @app.route('/signup', methods=['GET','POST'])
