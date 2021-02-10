@@ -21,7 +21,7 @@ Group Project for tri2!
   - CSS
   - JS
 - Routes, Model Code & CRUD 5pts
-  - Routes
+  - Routes: You can see all the routes on your website in our views.py file from [This line and downward](https://github.com/zenxha/sushi/blob/dce184d63e90a32519029a02918c2d3da508221b/views.py#L43)
   - Model Code
   - CRUD
 - Easter Egg 3 pts
