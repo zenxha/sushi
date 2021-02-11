@@ -26,11 +26,11 @@ Group Project for tri2!
   - Routes: 
     - You can see all the routes on your website in our views.py file from [This line and downward](https://github.com/zenxha/sushi/blob/dce184d63e90a32519029a02918c2d3da508221b/views.py#L43)
   - Model Code
-  - CRUD
+  - CRUD: Database setup
 - Easter Egg 3 pts
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
 - Project WOW 2 pts
-  - stuff
+  - Our upload page
 
 
 ### Tickets this week
