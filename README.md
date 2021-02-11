@@ -18,7 +18,7 @@ Group Project for tri2!
   - Idea
   - Visuals
   - HTML
-  - CSS
+  - CSS: We used CSS in designing our pages on the website, such as our [home page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163) [login page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/login.html#L7-L135) and [upload page.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/loginv2.html#L11-L135)
   - JS
 - Routes, Model Code & CRUD 5pts
   - Routes: You can see all the routes on your website in our views.py file from [This line and downward](https://github.com/zenxha/sushi/blob/dce184d63e90a32519029a02918c2d3da508221b/views.py#L43)
