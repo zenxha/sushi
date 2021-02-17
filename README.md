@@ -12,7 +12,7 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
-### Week 2/8 Grading
+### Progress Summary
 
 - Idea, Visuals, HTML, CSS, JS 5pts
   - Idea: Our idea, design, and features are located at the end of the README.
