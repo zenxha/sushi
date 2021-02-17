@@ -1,104 +1,6 @@
 {% extends "homesite/base2.html" %}
 
 {% block body %}
-<div class="header">
-<h1>A Collage of Sushi Submitted by Users</h1>
-</div>
-
-
-<div class="row">
-    <div class="column">
-        <img src="https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2020/04/peanut-tofu-sushi-macro-1000x1500.jpg">
-        <p>Submitted by: User</p>
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
-    </div>
-    <div class="column">
-        <img src="https://www.curiouscuisiniere.com/wp-content/uploads/2013/06/Japanese-Sushi-0458.450-450x270.jpg">
-        <p>Submitted by: User</p>
-        <img src="https://www.yummyhealthyeasy.com/wp-content/uploads/2018/04/california-sushi-rolls-square.jpg">
-        <p>Submitted by: User</p>
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
-    </div>
-    <div class="column">
-        <img src="https://c.ndtvimg.com/2019-09/tm8ef01_sushi_625x300_27_September_19.jpg">
-        <p>Submitted by: User</p>
-        <img src="https://www.wasabi-sushibar.com/wp-content/uploads/2020/06/Is-Eating-Sushi-Healthy.jpg">
-        <p>Submitted by: User</p>
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
-    </div>
-    <div class="column">
-        <img src="https://media-cdn.tripadvisor.com/media/photo-s/19/3b/00/06/sushi-place.jpg">
-        <p>Submitted by: User</p>
-        <img src="https://cdngeneral.rentcafe.com//dmslivecafe/UploadedImages/a31c359b-121e-4dc8-9149-d62791c3c8d2.jpg">
-        <p>Submitted by: User</p>
-        <img src="">
-        <img src="">
-        <img src="">
-        <img src="">
-    </div>
-</div>
-
-<style>
-    .row {
-      padding: 5px;
-      text-align: center;
-      color: white;
-      font-size: 20px;
-    }
-    .header {
-      padding: 20px;
-      text-align: center;
-      color: white;
-      font-size: 30px;
-    }
-     .row {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 4px;
-    }
-
-    /* Create four equal columns that sits next to each other */
-    .column {
-      flex: 25%;
-      max-width: 25%;
-      padding: 0 4px;
-    }
-
-    .column img {
-      margin-top: 8px;
-      vertical-align: middle;
-      width: 100%;
-    }
-
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 800px) {
-      .column {
-        flex: 50%;
-        max-width: 50%;
-      }
-    }
-
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-      .column {
-        flex: 100%;
-        max-width: 100%;
-      }
-    }
-</style>
-
             <table class="score">
                 <tr>
                     <th>Name</th>
@@ -111,6 +13,4 @@
                 </tr>
                 {%  endfor %}
             </table>
-
-
 {% endblock %}
