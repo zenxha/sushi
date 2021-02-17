@@ -53,10 +53,10 @@ def browse():
             'username': review.username,
             'content': review.content,
             'satisfaction': review.satisfaction,
-            'image': review.img
+
         }
         reviews.append(review_dict)
-    return render_template("homesite/browse.html", reviews=reviews)
+    return render_template("homesite/browse.html", reviews=reviews, background=random.choice(backgrounds))
 
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
