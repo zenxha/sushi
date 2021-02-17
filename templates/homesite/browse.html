@@ -99,4 +99,18 @@
     }
 </style>
 
+            <table class="score">
+                <tr>
+                    <th>Name</th>
+                    <th>Content</th>
+                </tr>
+                {% for review in reviews  %}
+                <tr>
+                    <td>{{review.username}}</td>
+                    <td>{{review.content}}</td>
+                </tr>
+                {%  endfor %}
+            </table>
+
+
 {% endblock %}

@@ -11,6 +11,7 @@ class Review(db.Model):
     content = db.Column(db.Text, nullable=True)
     img = db.Column(db.Text, unique=True, nullable=False)
     filename = db.Column(db.Text, nullable=False)
+    satisfaction = db.Column(db.Text)
     mimetype = db.Column(db.Text, nullable=False)
 
 class User(UserMixin, db.Model):

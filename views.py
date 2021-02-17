@@ -44,9 +44,19 @@ def index():
 def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
 
-@app.route('/slideshow')
-def slideshow():
-    return render_template("homesite/slideshow.html")
+@app.route('/browse')
+def browse():
+    review_query = Review.query.all()
+    reviews = []
+    for review in review_query:
+        review_dict = {
+            'username': review.username,
+            'content': review.content,
+            'satisfaction': review.satisfaction,
+            'image': review.img
+        }
+        reviews.append(review_dict)
+    return render_template("homesite/browse.html", reviews=reviews)
 
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
@@ -66,7 +76,7 @@ def upload():
         if not filename or not mimetype:
             return 'Bad upload', 400
 
-        review = Review(username=name, content=content, img=image.read(), filename=filename, mimetype=mimetype)
+        review = Review(username=name, content=content, img=image.read(), filename=filename, satisfaction=satisfaction,mimetype=mimetype)
         db.session.add(review)
         db.session.commit()
         return redirect(url_for("index"))
