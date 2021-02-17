@@ -21,7 +21,7 @@ Group Project for tri2!
   - HTML: You can view these in any of our .html files
   - CSS: 
     - We used CSS in designing our pages on the website, such as our [home page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163) [login page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/login.html#L7-L135) and [upload page.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/loginv2.html#L11-L135)
-  - JS
+
 - Routes, Model Code & CRUD 5pts
   - Routes: 
     - You can see all the routes on your website in our views.py file from [This line and downward](https://github.com/zenxha/sushi/blob/dce184d63e90a32519029a02918c2d3da508221b/views.py#L43)
@@ -30,7 +30,7 @@ Group Project for tri2!
 - Easter Egg 3 pts
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
 - Project WOW 2 pts
-  - Our upload page
+  - [Our upload page](https://cdn.discordapp.com/attachments/784178874303905792/811714174714380288/unknown.png)
 
 
 ### Tickets this week
