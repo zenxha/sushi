@@ -14,22 +14,24 @@ Group Project for tri2!
 
 ### Progress Summary
 
-- Idea, Visuals, HTML, CSS, JS 5pts
+- Front End Aspect
   - Idea: Our idea, design, and features are located at the end of the README.
   - Visuals: 
     - We mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) and creating a [nice looking home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
-  - HTML: You can view these in any of our .html files
+    - We are currently working on our table to display user info on our browse page
+  - HTML:
+    - We primarily focused on implementing a scoreboard/table like Trish demonstrated, which can be seen in our [browse.html](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html) file.
   - CSS: 
     - We used CSS in designing our pages on the website, such as our [home page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163) [login page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/login.html#L7-L135) and [upload page.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/loginv2.html#L11-L135)
 
-- Routes, Model Code & CRUD 5pts
+- Back End Aspect
   - Routes: 
     - The recently updated routes on our project are our [easteregg](https://github.com/zenxha/sushi/tree/main/templates/easteregg) and [browse page.](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html)
   - Model Code
   - CRUD: Database setup
-- Easter Egg 3 pts
+- Easter Egg 
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
-- Project WOW 2 pts
+- Project WOW
   - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Once you upload an image, type in http://rubinfamily.dyndns.org:5000/images/1 to view the image you just uploaded. Each image uploaded is assigned an id, starting with 1, so if you upload another image, you can replace 1 with 2 to view that uploaded image, and so on.
 
 
