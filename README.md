@@ -12,22 +12,25 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
-### Week 2/8 Grading
+### Progress Summary
 
 - Idea, Visuals, HTML, CSS, JS 5pts
-  - Idea
-  - Visuals
-  - HTML
-  - CSS
-  - JS
+  - Idea: Our idea, design, and features are located at the end of the README.
+  - Visuals: 
+    - We mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) and creating a [nice looking home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
+  - HTML: You can view these in any of our .html files
+  - CSS: 
+    - We used CSS in designing our pages on the website, such as our [home page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163) [login page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/login.html#L7-L135) and [upload page.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/loginv2.html#L11-L135)
+
 - Routes, Model Code & CRUD 5pts
-  - Routes
+  - Routes: 
+    - You can see all the routes on your website in our views.py file from [This line and downward](https://github.com/zenxha/sushi/blob/dce184d63e90a32519029a02918c2d3da508221b/views.py#L43)
   - Model Code
-  - CRUD
+  - CRUD: Database setup
 - Easter Egg 3 pts
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
 - Project WOW 2 pts
-  - stuff
+  - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Once you upload an image, type in http://rubinfamily.dyndns.org:5000/images/1 to view the image you just uploaded. Each image uploaded is assigned an id, starting with 1, so if you upload another image, you can replace 1 with 2 to view that uploaded image, and so on.
 
 
 ### Tickets this week
