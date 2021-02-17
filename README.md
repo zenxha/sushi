@@ -24,7 +24,7 @@ Group Project for tri2!
 
 - Routes, Model Code & CRUD 5pts
   - Routes: 
-    - You can see all the routes on your website in our views.py file from [This line and downward](https://github.com/zenxha/sushi/blob/dce184d63e90a32519029a02918c2d3da508221b/views.py#L43)
+    - The recently updated routes on our project are our [easteregg](https://github.com/zenxha/sushi/tree/main/templates/easteregg) and [browse page.](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html)
   - Model Code
   - CRUD: Database setup
 - Easter Egg 3 pts
