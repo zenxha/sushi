@@ -30,7 +30,7 @@ Group Project for tri2!
 - Easter Egg 3 pts
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
 - Project WOW 2 pts
-  - [Our upload page](https://cdn.discordapp.com/attachments/784178874303905792/811714174714380288/unknown.png). Once you upload an image, type in http://rubinfamily.dyndns.org:5000/images/1 to view the image you just uploaded. Each image uploaded is assigned an id, starting with 1, so if you upload another image, you can replace 1 with 2 to view that uploaded image, and so on.
+  - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Once you upload an image, type in http://rubinfamily.dyndns.org:5000/images/1 to view the image you just uploaded. Each image uploaded is assigned an id, starting with 1, so if you upload another image, you can replace 1 with 2 to view that uploaded image, and so on.
 
 
 ### Tickets this week
