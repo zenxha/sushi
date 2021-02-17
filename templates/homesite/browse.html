@@ -5,11 +5,13 @@
                 <tr>
                     <th>Name</th>
                     <th>Content</th>
+                    <th>Satisfaction Level</th>
                 </tr>
                 {% for review in reviews  %}
                 <tr>
                     <td>{{review.username}}</td>
                     <td>{{review.content}}</td>
+                    <td>{{review.satisfaction}}</td>
                 </tr>
                 {%  endfor %}
             </table>
