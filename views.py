@@ -79,6 +79,10 @@ def index():
 def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
 
+@app.route('/easteregg')
+def easteregg():
+    return render_template("easteregg/base.html", background="https://i.pinimg.com/originals/b8/e2/70/b8e270b7237f2f4c3a5905e6a3ca5f63.png")
+
 @app.route('/browse')
 def browse():
     review_query = Review.query.all()

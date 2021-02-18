@@ -15,6 +15,7 @@
         <ul>
             <li><a href="/">Return to Home</a></li>
             <li><a href="/easteregg/crossover">Crossover Report</a></li>
+            <li><a href="{{url_for('project')}}">Projects</a></li>
         </ul>
         </div>
     </div>
@@ -27,20 +28,22 @@
 
   <style>
     body {
-        background-image: url(https://static.vecteezy.com/system/resources/previews/000/345/052/original/easter-eggs-in-grass-on-a-white-background-vector.jpg);
+        background:linear-gradient(rgba(103, 135, 211, .6), rgba(144, 25, 166, .6)), url(https://i.pinimg.com/originals/b8/e2/70/b8e270b7237f2f4c3a5905e6a3ca5f63.png);
         background-size: cover;
+        animation: grow 60s linear .5s infinite;
     }
 
     .navbar{
         width: 100%;
         height: 60px;
-        background-color: #fff;
+        background-color: transparent;
+
 
     }
 
     .navbar p{
         font-family: arial;
-        color: #222;
+        color: white;
         font-size: 20px;
         line-height: 25px;
         float: left;
@@ -60,7 +63,7 @@
     .navbar ul li a {
         display: block;
         font-family: arial;
-        color: #222;
+        color: white;
         font-size: 16px;
         padding: 10px 20px;
         text-decoration: none;
