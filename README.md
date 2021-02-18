@@ -12,37 +12,46 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
-### Progress Summary
 
-- Idea, Visuals, HTML, CSS, JS 5pts
+### Progress Summary
+- College Board rubric is displayed on readme for easy access
+- To access crossover report, navigate to /easteregg/crossover, or click on the crossover button in the easter egg navbar
+
+- Front End Aspect
   - Idea: Our idea, design, and features are located at the end of the README.
   - Visuals: 
-    - We mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) and creating a [nice looking home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
-  - HTML: You can view these in any of our .html files
+    - For the last couple of weeks, we mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) and creating a [nice looking home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
+    - We are currently working on our table to display user uploaded info from the upload page onto our browse page
+  - HTML:
+    - We primarily focused on implementing a scoreboard/table like Trish demonstrated, which can be seen in our [browse.html](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html) file.
   - CSS: 
     - We used CSS in designing our pages on the website, such as our [home page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163) [login page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/login.html#L7-L135) and [upload page.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/loginv2.html#L11-L135)
 
-- Routes, Model Code & CRUD 5pts
+- Back End Aspect
   - Routes: 
-    - The recently updated routes on our project are our [easteregg](https://github.com/zenxha/sushi/tree/main/templates/easteregg) and [browse page.](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html)
-  - Model Code
-  - CRUD: Database setup
-- Easter Egg 3 pts
+    - The recently updated routes on our project are our [easteregg path where you need mort as the username](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L63-L71) and [browse page](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L47-L60) that takes info from upload and displays it on the browse page.
+  - Database:
+    - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11), and the information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82) and is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60)
+- Easter Egg 
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
-- Project WOW 2 pts
+- Project WOW
   - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Once you upload an image, type in http://rubinfamily.dyndns.org:5000/images/1 to view the image you just uploaded. Each image uploaded is assigned an id, starting with 1, so if you upload another image, you can replace 1 with 2 to view that uploaded image, and so on.
 
 
-### Tickets this week
+### Tickets Progress
 - Allen
   - [Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)
+  - [Worked with Chris on creating the front end for our browse page that displays the user's review (2nd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
 - Chris
   - [Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53703118)
+  - [Worked on creating the front end for the browse page that displays user info and implementing CSS on the page(2nd and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
 - Devam
   - [Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)
+  - [Helped secure the route to easter egg so it is only accessible by entering mort as the username, and can't be viewed by just typing in the url (checkbox 2 and 3)](https://github.com/zenxha/sushi/projects/4#card-53782464)
 - Komay
   - [Worked on integrating the backend login/auth system with the frontend html form](https://github.com/zenxha/sushi/projects/4#card-54354857)
   - [Finished 3rd checkbox of the ticket which only allows the correct account to access easteregg](https://github.com/zenxha/sushi/projects/4#card-53782464)
+  - [Worked on the backend aspect of taking the informatoin from upload.html and displaying it on browse.html(1st and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
 
 ### College Board Requirements
 - Instructions for input from one of the following:
