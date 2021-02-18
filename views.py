@@ -17,7 +17,7 @@ from model import Review, User
 
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db_init(app)
 
@@ -26,11 +26,46 @@ db = SQLAlchemy()
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
+"""
+DATABASE = 'templates/homesite/Users.db'
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect(DATABASE)
+    return db
+
+<<<<<<< HEAD
+app.config['MYSQL_HOST'] = '76.176.54.2'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'sushi'
+app.config['MYSQL_DB'] = 'usersdb'
+
+#mysql = MySQL(app)
+
+=======
+>>>>>>> 49a86ecffd9c006a400e32eccb62b5b2218ed822
+@app.teardown_appcontext
+def close_connection(exception):
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()
+        """
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(userid):
+    try:
+        return session.query(User).filter(User.id == userid).first()
+    except model.DoesNotExist :
+        return None
 
 @app.route('/')
 def index():
     #response = requests.get('https://nekos.life/api/v2/img/wallpaper')
-    # background = response.json()['url']
+    #background = response.json()['url']
     response = requests.get('https://api.quotable.io/random?maxLength=60')
     quote = response.json()['content']
     author = response.json()['author']
@@ -57,6 +92,10 @@ def browse():
         }
         reviews.append(review_dict)
     return render_template("homesite/browse.html", reviews=reviews)
+
+@app.route('/easteregg/crossover')
+def crossover():
+    return render_template("easteregg/crossover.html")
 
 @app.route('/upload', methods=["POST", 'GET'])
 def upload():
@@ -96,23 +135,50 @@ def get_img(id):
 def login_post():
     name = request.form.get('username')
     password = request.form.get('password')
+    remember = True if request.form.get('remember') else False
 
+    if request.method == "POST":
+        user = User.query.filter_by(username=name).first()
+
+    # check if the user actually exists
+    # take the user-supplied password, hash it, and compare it to the hashed password in the database
+        if not user or not check_password_hash(user.password, password):
+            flash('Please check your login details and try again.')
+            return redirect('/signup')
+        # if the above check passes, then we know the user has the right credentials
+        user = User(username=name, id=id, password=password)
+        login_user(user, remember=remember)
+        return redirect(url_for('profile'))
     return render_template('homesite/login.html')
 
 @app.route('/profile/<int:id>')
+@login_required
 def profile(id):
     img = 2
-    return "o"
+
+    return render_template("homesite/profile.html", name=current_user.name)
 
 
 @app.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
-        username = request.form.get('username')
+        name = request.form.get('username')
         password = request.form.get('password')
-        email = request.form.get('email')
-        user = User.query.filter_by(username=username).first() # if this returns a user, then the email already exists in database
 
+        user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
+
+        if user: # if a user is found, we want to redirect back to signup page so user can try again
+            flash('Email address already exists')
+            return redirect(url_for('signup'))
+
+            # create a new user with the form data. Hash the password so the plaintext version isn't saved.
+            new_user = User(username=name, password=generate_password_hash(password, method='sha256'))
+
+            # add the new user to the database
+            db.session.add(new_user)
+            db.session.commit()
+
+            return redirect(url_for(login_post))
     return render_template('homesite/signup.html')
 
 @app.route('/user')

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+{% extends "easteregg/base.html" %}
+
+{% block body %}
+<body>
+
+<div class="header">
+    <h1>Crossover Report</h1>
+</div>
+<div class="container">
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vRwawAHBNCZnOYiw5fSX3V9rPDvEs3TzzX3YbfJeaoIls8Dua0ipmria-KOL0knumI8w9WxLtCLPZEw/pub?embedded=true" style="height:680px;width:900px;"></iframe>
+</div>
+
+{% endblock %}
+
+{% block style %}
+<style>
+.container {
+    width: 800px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Times New Roman;
+    margin: 0;
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
+
+.content {padding:20px;}
+</style>
+{% endblock %}

@@ -15,4 +15,28 @@
                 </tr>
                 {%  endfor %}
             </table>
+<style>
+.score {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.score td, .score th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.score tr:nth-child(even){background-color: #f2f2f2;}
+
+.score tr:hover {background-color: #ddd;}
+
+.score th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #9b6dff;
+  color: white;
+}
+</style>
 {% endblock %}
