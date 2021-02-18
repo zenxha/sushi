@@ -26,7 +26,7 @@ Group Project for tri2!
 
 - Back End Aspect
   - Routes: 
-    - The recently updated routes on our project are our [easteregg](https://github.com/zenxha/sushi/tree/main/templates/easteregg) and [browse page.](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html)
+    - The recently updated routes on our project are our [easteregg path where you need mort as the username](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L63-L71) and [browse page.](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L47-L60)
   - Model Code
   - CRUD: Database setup
 - Easter Egg 
