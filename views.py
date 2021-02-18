@@ -50,10 +50,11 @@ def browse():
     reviews = []
     for review in review_query:
         review_dict = {
+            'id': review.id,
             'username': review.username,
             'content': review.content,
             'satisfaction': review.satisfaction,
-
+            'image':  'http://localhost:5000/images/' + str(review.id)
         }
         reviews.append(review_dict)
     return render_template("homesite/browse.html", reviews=reviews, background=random.choice(backgrounds))

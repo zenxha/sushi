@@ -13,6 +13,7 @@
     <div class="property-description">
       <h5> {{review.username}} </h5>
       <p>{{review.content}}</p>
+      <p>ID {{review.id}}</p>
     </div>
     <a href="#">
       <div class="property-social-icons">
@@ -21,7 +22,7 @@
     </a>
   </div>
 </div>
-{% endfor %}
+
 
 
 
@@ -58,7 +59,7 @@ p
   width:100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
 
 /* End Non-Essential  */
@@ -97,7 +98,9 @@ p
   -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  background-image:url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+
+  background-image:url('{{review.image}}');
+
   background-size:cover;
   background-repeat:no-repeat;
 }
@@ -177,4 +180,5 @@ opacity:1;
 
 */
 </style>
+{% endfor %}
 {% endblock %}
