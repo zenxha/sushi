@@ -18,7 +18,6 @@ Group Project for tri2!
 - To access crossover report, navigate to /easteregg/crossover, or click on the crossover button in the easter egg navbar
 
 - Front End Aspect
-  - Idea: Our idea, design, and features are located at the end of the README.
   - Visuals: 
     - For the last couple of weeks, we mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) and creating a [nice looking home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
     - We are currently working on our table to display user uploaded info from the upload page onto our browse page
