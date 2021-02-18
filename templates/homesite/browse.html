@@ -1,10 +1,11 @@
 {% extends "homesite/base2.html" %}
 
 {% block body %}
+{% if reviews|length > 0 %}
 {% for review in reviews %}
 <div class="center">
   <div class="property-card">
-    <a href="/">
+    <a href="{{review.image}}">
       <div class="property-image">
         <div class="property-image-title">
           <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
@@ -14,6 +15,7 @@
       <h5> {{review.username}} </h5>
       <p>{{review.content}}</p>
       <p>ID {{review.id}}</p>
+      <style>.property-image{background-image:url('{{review.image}}');}</style>
     </div>
     <a href="#">
       <div class="property-social-icons">
@@ -22,9 +24,32 @@
     </a>
   </div>
 </div>
+{% endfor %}
+{% else %}
+<div class="center">
+  <div class="property-card">
+    <a href="https://www.youtube.com/watch?v=TQ8WlA2GXbk">
+      <div class="property-image">
+        <div class="property-image-title">
+
+        </div>
+      </div></a>
+    <div class="property-description">
+      <h5> Wow, such empty! </h5>
+      <p>No reviews published yet.<br>Be the first!</p>
+      <p>ID 42069</p>
+      <style>.property-image{background-image:url('https://i.pinimg.com/originals/2c/d5/f9/2cd5f95facd32432677a2a7f75391468.jpg');}</style>
+    </div>
+    <a href="#">
+      <div class="property-social-icons">
+
+      </div>
+    </a>
+  </div>
+</div>
 
 
-
+{% endif %}
 
 
 <style>
@@ -99,7 +124,7 @@ p
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 
-  background-image:url('{{review.image}}');
+
 
   background-size:cover;
   background-repeat:no-repeat;
@@ -180,5 +205,5 @@ opacity:1;
 
 */
 </style>
-{% endfor %}
+
 {% endblock %}
