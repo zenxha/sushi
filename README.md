@@ -12,7 +12,10 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
+
 ### Progress Summary
+- College Board rubric is displayed on readme for easy access
+- To access crossover report, navigate to /easteregg/crossover, or click on the crossover button in the easter egg navbar
 
 - Front End Aspect
   - Idea: Our idea, design, and features are located at the end of the README.
