@@ -44,6 +44,7 @@ Group Project for tri2!
   - [Worked on creating the front end for the browse page that displays user info and implementing CSS on the page(2nd and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
 - Devam
   - [Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)
+  - [Helped secure the route to easter egg so it is only accessible by entering mort as the username, and can't be viewed by just typing in the url (checkbox 2 and 3)](https://github.com/zenxha/sushi/projects/4#card-53782464)
 - Komay
   - [Worked on integrating the backend login/auth system with the frontend html form](https://github.com/zenxha/sushi/projects/4#card-54354857)
   - [Finished 3rd checkbox of the ticket which only allows the correct account to access easteregg](https://github.com/zenxha/sushi/projects/4#card-53782464)
