@@ -34,7 +34,7 @@ Group Project for tri2!
 - Easter Egg 
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
 - Project WOW
-  - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Each image uploaded is assigned an id, which you can view on the browse page. Once you have the image, go to the url http://rubinfamily.dyndns.org:5000/images/1, where you replace 1 with whatever id the image you just uploaded is to view the image
+  - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Each image uploaded is assigned an id, which you can view on the browse page. Once you have the image, go to the url http://rubinfamily.dyndns.org:5000/images/1, where you replace 1 with whatever id the image you just uploaded is to view the image. You can also view the image by clicking the picture in the browse page and see the full image
 
 
 ### Tickets Progress
