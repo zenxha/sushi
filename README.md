@@ -41,6 +41,8 @@ Group Project for tri2!
 - Allen
   - [Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)
   - [Worked with Chris on creating the front end for our browse page that displays the user's review (2nd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
+  - [Embed the crossover report into the easter egg navbar](https://github.com/zenxha/sushi/projects/4#card-55314605)
+  - [Moved the project section from the main site navbar to the easter egg navbar](https://github.com/zenxha/sushi/projects/4#card-55314635)
 - Chris
   - [Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53703118)
   - [Worked on creating the front end for the browse page that displays user info and implementing CSS on the page(2nd and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
