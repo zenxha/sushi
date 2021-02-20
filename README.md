@@ -15,7 +15,7 @@ Group Project for tri2!
 
 ### Progress Summary
 - **College Board rubric is displayed on readme for easy access**
-- **To access crossover report, navigate to /easteregg/crossover, or click on the crossover button in the easter egg navbar**
+- **To access crossover report, navigate to /easteregg/crossover, or click on the crossover button in the easter egg navbar. [Or use link](http://rubinfamily.dyndns.org:5000/easteregg/crossover)**
 
 - Front End Aspect
   - Visuals: 
