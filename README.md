@@ -4,7 +4,7 @@ Group Project for tri2!
 ### Links
 - [Project Board](https://github.com/zenxha/sushi/projects/4)
 - [Runtime Link](http://rubinfamily.dyndns.org:5000/)
-- [Easter Egg Link (Use mort as username)](http://rubinfamily.dyndns.org:5000/update)
+- [Easter Egg Link (Use mort as username)](http://rubinfamily.dyndns.org:5000/updload)
 
 ### Collaborators
 - Allen Xu ID: #72947445
