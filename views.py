@@ -26,7 +26,11 @@ db = SQLAlchemy()
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
-
+@app.before_request
+def before_request():
+    g.user = None
+    if 'user' in session:
+        g.user = session['user']
 
 @app.route('/')
 def index():
@@ -55,13 +59,13 @@ def browse():
     reviews = []
 
     for review in review_query:
-        websiteurl = url_for('get_img')
+        websiteurl = url_for('get_img', id=review.id )
         review_dict = {
             'id': review.id,
             'username': review.username,
             'content': review.content,
             'satisfaction': review.satisfaction,
-            'image':  websiteurl + str(review.id)
+            'image':  websiteurl
         }
         reviews.append(review_dict)
     return render_template("homesite/browse.html", reviews=reviews, background=random.choice(backgrounds))
@@ -109,7 +113,6 @@ def login_post():
     if request.method == "POST":
         password = request.form.get('password')
         email = request.form.get("email")
-        remember = True if request.form.get('remember') else False
         user = User.query.filter_by(email=email).first()
         if not user: return render_template('homesite/signup.html', error="Please sign up for an account first")
         if user.password == password:
