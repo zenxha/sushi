@@ -17,7 +17,7 @@ from model import Review, User
 
 app = Flask(__name__)
 # SQLAlchemy config. Read more: https://flask-sqlalchemy.palletsprojects.com/en/2.x/
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db_init(app)
 
@@ -106,23 +106,21 @@ def get_img(id):
 
 @app.route('/login', methods=["POST", "GET"])
 def login_post():
-    name = request.form.get('username')
-    password = request.form.get('password')
-    remember = True if request.form.get('remember') else False
-
     if request.method == "POST":
-        user = User.query.filter_by(username=name).first()
+        password = request.form.get('password')
+        email = request.form.get("email")
+        remember = True if request.form.get('remember') else False
+        user = User.query.filter_by(email=email).first()
+        if not user: return render_template('homesite/signup.html', error="Please sign up for an account first")
+        if user.password == password:
+            session.pop('user', None)
+            session['user'] = email
+            return redirect(url_for('index'))
+        else:
+            return render_template('login.html', error="Please check your credentials and try again")
 
-    # check if the user actually exists
-    # take the user-supplied password, hash it, and compare it to the hashed password in the database
-        if not user or not check_password_hash(user.password, password):
-            flash('Please check your login details and try again.')
-            return redirect('/signup')
-        # if the above check passes, then we know the user has the right credentials
-        user = User(username=name, id=id, password=password)
-        login_user(user, remember=remember)
-        return redirect(url_for('profile'))
-    return render_template('homesite/login.html')
+    return render_template("homesite/login.html")
+
 
 
 
@@ -137,16 +135,16 @@ def profile(id):
 def signup():
     if request.method == 'POST':
         name = request.form.get('username')
+        email = request.form.get('email')
         password = request.form.get('password')
 
         user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
 
         if user: # if a user is found, we want to redirect back to signup page so user can try again
-            flash('Email address already exists')
-            return redirect(url_for('signup'))
+            return
 
             # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-            new_user = User(username=name, password=generate_password_hash(password, method='sha256'))
+            new_user = User(username=name, password=password, email = email)
 
             # add the new user to the database
             db.session.add(new_user)

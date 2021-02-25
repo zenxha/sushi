@@ -157,15 +157,18 @@ body {
 </style>
             <div class="header">
                 <h1>Login</h1>
-                <p>Enter your information:)</p>
+                {% if error %}
+                    <p>{{error}}</p>
+                {% else %}
+                    <p>Enter Your Credentials</p>
+                {% endif %}
             </div>
             <hr>
-
             <form action="/login" method="POST" enctype="text/plain, application/x-www-form-urlencoded, multipart/form-data">
-                <p>Username:</p>
-                <p><input type="text" name="username"></p>
+                <p>Email:</p>
+                <p><input type="text" name="email"></p>
                 <p>Password:</p>
-                <p><input type="text" name="password"></p>
+                <p><input type="password" name="password"></p>
                 <button type="submit" value="Submit">Submit</button>
 
             </form>
