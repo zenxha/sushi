@@ -6,7 +6,7 @@ import requests
 import sqlite3
 from flask import g
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response, Blueprint
-#from flask_mysqldb import MySQL
+
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_required, login_user, logout_user, current_user, LoginManager
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -26,41 +26,7 @@ db = SQLAlchemy()
 backgrounds = ["https://www.teahub.io/photos/full/193-1933361_laptop-aesthetic-wallpapers-anime.jpg"]
 
 pathForImages='./images/'
-"""
-DATABASE = 'templates/homesite/Users.db'
-def get_db():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-    return db
 
-<<<<<<< HEAD
-app.config['MYSQL_HOST'] = '76.176.54.2'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'sushi'
-app.config['MYSQL_DB'] = 'usersdb'
-
-#mysql = MySQL(app)
-
-=======
->>>>>>> 49a86ecffd9c006a400e32eccb62b5b2218ed822
-@app.teardown_appcontext
-def close_connection(exception):
-    db = getattr(g, '_database', None)
-    if db is not None:
-        db.close()
-        """
-
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = 'login'
-
-@login_manager.user_loader
-def load_user(userid):
-    try:
-        return session.query(User).filter(User.id == userid).first()
-    except model.DoesNotExist :
-        return None
 
 @app.route('/')
 def index():
@@ -87,13 +53,15 @@ def easteregg():
 def browse():
     review_query = Review.query.all()
     reviews = []
+
     for review in review_query:
+        websiteurl = url_for('get_img')
         review_dict = {
             'id': review.id,
             'username': review.username,
             'content': review.content,
             'satisfaction': review.satisfaction,
-            'image':  'http://localhost:5000/images/' + str(review.id)
+            'image':  websiteurl + str(review.id)
         }
         reviews.append(review_dict)
     return render_template("homesite/browse.html", reviews=reviews, background=random.choice(backgrounds))
@@ -156,8 +124,9 @@ def login_post():
         return redirect(url_for('profile'))
     return render_template('homesite/login.html')
 
+
+
 @app.route('/profile/<int:id>')
-@login_required
 def profile(id):
     img = 2
 
