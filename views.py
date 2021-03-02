@@ -1,15 +1,13 @@
-"""Views in MVC has responsibility for establishing routes and redering HTML"""
-from __init__ import create_app
-import json
+"""Views in MVC has responsibility for establishing routes and rendering HTML"""
+
+from __init__ import app
 import random
 import requests
-import sqlite3
+import flask
 from flask import g
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response, Blueprint
 
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import login_required, login_user, logout_user, current_user, LoginManager
-from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from db import db_init, db
 from model import Review, User
@@ -59,7 +57,7 @@ def browse():
     reviews = []
 
     for review in review_query:
-        websiteurl = url_for('get_img', id=review.id )
+        websiteurl = url_for('get_img', id=review.id)
         review_dict = {
             'id': review.id,
             'username': review.username,
@@ -106,35 +104,37 @@ def get_img(id):
 
     return Response(img.img, mimetype=img.mimetype)
 
+
 "Login Section"
+
 
 @app.route('/login', methods=["POST", "GET"])
 def login_post():
     if request.method == "POST":
         password = request.form.get('password')
-        email = request.form.get("email")
-        user = User.query.filter_by(email=email).first()
+        name = request.form.get("username")
+        user = User.query.filter_by(username=name).first()
         if not user: return render_template('homesite/signup.html', error="Please sign up for an account first")
         if user.password == password:
             session.pop('user', None)
-            session['user'] = email
-            return redirect(url_for('index'))
+            session['user'] = user.username
+            return redirect(url_for('upload'))
         else:
             return render_template('login.html', error="Please check your credentials and try again")
 
     return render_template("homesite/login.html")
 
 
-
-
+"""
 @app.route('/profile/<int:id>')
 def profile(id):
     img = 2
 
     return render_template("homesite/profile.html", name=current_user.name)
+"""
 
 
-@app.route('/signup', methods=['GET','POST'])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
         name = request.form.get('username')
@@ -143,31 +143,21 @@ def signup():
 
         user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
 
-        if user: # if a user is found, we want to redirect back to signup page so user can try again
-            return
-
+        if user:  # if a user is found, we want to redirect back to signup page so user can try again
+            return "choose a new username"
+        else:
             # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-            new_user = User(username=name, password=password, email = email)
+            new_user = User(username=name, password=password, email=email)
 
             # add the new user to the database
             db.session.add(new_user)
             db.session.commit()
 
-            return redirect(url_for(login_post))
+            return redirect(url_for("login_post"))
     return render_template('homesite/signup.html')
 
-@app.route('/user')
-@login_required
-def user():
-    if "user" in session:
-        user = session["user"]
-        return render_template("homesite/user.html", user=user)
-    else:
-        flash("You are not logged in!")
-        return redirect(url_for("login_post"))
 
 @app.route('/logout')
-@login_required
 def logout():
-    logout_user()
+    session.pop('user')
     return redirect(url_for("index"))

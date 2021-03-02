@@ -3,27 +3,27 @@
 {% block body %}
 {% if reviews|length > 0 %}
 {% for review in reviews %}
-<div class="center">
-  <div class="property-card">
-    <a href="{{review.image}}">
-      <div class="property-image">
-        <div class="property-image-title">
-          <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-        </div>
-      </div></a>
-    <div class="property-description">
-      <h5> {{review.username}} </h5>
-      <p>{{review.content}}</p>
-      <p>ID {{review.id}}</p>
-      <style>.property-image{background-image:url('{{review.image}}');}</style>
-    </div>
-    <a href="#">
-      <div class="property-social-icons">
-        <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+  <div class="center">
+    <div class="property-card">
+      <a href="{{review.image}}">
+        <div class="property-image">
+          <div class="property-image-title">
+            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+          </div>
+        </div></a>
+      <div class="property-description">s
+        <h5> {{review.username}} </h5>
+        <p>{{review.content}}</p>
+        <p>ID {{review.id}}</p>
+        <style>.property-image{background-image:url('{{review.image}}');}</style>
       </div>
-    </a>
+      <a href="#">
+        <div class="property-social-icons">
+          <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+        </div>
+      </a>
+    </div>
   </div>
-</div>
 {% endfor %}
 {% else %}
 <div class="center">
@@ -80,11 +80,13 @@ p
 
 .center
 {
+  content:"";
   height:100vh;
   width:100%;
-  display: flex;
-  justify-content: center;
-  align-items: left;
+  display: inline-list-item;
+  justified-content: start;
+  align-items: start;
+  clear: both;
 }
 
 /* End Non-Essential  */

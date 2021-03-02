@@ -9,11 +9,14 @@
 			<li><a href="/upload">Upload</a></li>
 			<li><a href="{{ url_for('browse')}}">Browse</a></li>
 
+			{% if not session['user'] %}
 			<li><a href="{{ url_for('login_post') }}">Login</a></li>
 			<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+			{% endif %}
 
-
+			{% if session['user'] %}
 			<li><a href="{{ url_for('logout') }}">Logout</a></li>
+			{% endif %}
 
 
 
@@ -26,13 +29,8 @@
 
 {#
 <!--
-{% if not current_user.is_authenticated %}
-<li><a href="{{ url_for('login_post') }}">Login</a></li>
-<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-{% endif %}
-{% if current_user.is_authenticated %}
-<li><a href="{{ url_for('logout') }}">Logout</a></li>
-{% endif %}
+
+
 -->
 #}
 

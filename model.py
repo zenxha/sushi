@@ -13,8 +13,9 @@ class Review(db.Model):
     satisfaction = db.Column(db.Text)
     mimetype = db.Column(db.Text, nullable=False)
 
-class User(UserMixin,db.Model):
-    id = db.Column(db.Text, primary_key=True)
+
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.Text, nullable=False)
     email = db.Column(db.Text, nullable=False)
     password = db.Column(db.Text, nullable=False)
