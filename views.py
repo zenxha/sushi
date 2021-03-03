@@ -4,7 +4,7 @@ from __init__ import app
 import random
 import requests
 import flask
-from flask import g
+from flask import g, jsonify
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response, Blueprint
 
 from flask_sqlalchemy import SQLAlchemy
@@ -120,7 +120,7 @@ def login_post():
             session['user'] = user.username
             return redirect(url_for('upload'))
         else:
-            return render_template('login.html', error="Please check your credentials and try again")
+            return render_template('homesite/login.html', error="Please check your credentials and try again")
 
     return render_template("homesite/login.html")
 
@@ -161,3 +161,23 @@ def signup():
 def logout():
     session.pop('user')
     return redirect(url_for("index"))
+
+@app.route('/api/review/<int:id>')
+def get_review(id):
+    review_query = Review.query.all()
+    reviews = []
+
+    for review in review_query:
+        websiteurl = url_for('get_img', id=review.id)
+        review_dict = {
+            'id': review.id,
+            'username': review.username,
+            'content': review.content,
+            'satisfaction': review.satisfaction,
+            'image':  websiteurl
+        }
+        reviews.append(review_dict)
+    if 0 <= id < len(reviews):
+        return(jsonify(reviews[id]))
+    else:
+        return Response(f"No review with id {id} exists", status=400)

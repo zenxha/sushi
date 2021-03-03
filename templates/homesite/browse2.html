@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	<div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link">Blog card</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<section id="blog_area" class="pt-5">
+		<div id="masonry">
+
+			<div class="card">
+					<div class="card__img">
+							<a href="#">
+									<img class="img-fluid" src="https://picsum.photos/500/200/?random" alt="Image 1">
+							</a>
+							<div class="card__date">
+									<span>Jan. 1st 19</span>
+							</div>
+					</div>
+					<div class="card__content">
+							<h4 class="card__title">
+									Card 1 Title
+							</h4>
+							<p class="card__content-jcenter">
+									Haec subinde Constantius audiens et quaedam referente Thalassio doctus, quem eum odisse iam conpererat lege communi, scribens ad Caesarem blandius adiumenta paulatim illi subtraxit, sollicitari se simulans ne, uti est militare otium fere tumultuosum, in eius perniciem conspiraret, solisque scholis iussit esse contentum palatinis et protectorum cum Scutariis et Gentilibus, et mandabat Domitiano, ex comite largitionum, praefecto ut cum in Syriam venerit, Gallum, quem crebro acciverat, ad Italiam properare blande hortaretur et verecunde.
+							</p>
+							<span>
+									<a href="#">Read more</a>
+							</span>
+					</div>
+			</div>
+
+
+		</div>
+	</section>
+</div>
+
+
+</body>
+</html>
+<style>
+$main-blue: #007bff;
+
+body {
+	padding-top: 5rem;
+	min-height: 75rem;
+}
+
+a,
+a:hover,
+a:focus {
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease 0s;
+}
+
+#blog_area {
+  .card {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background: #fff;
+    transition: all ease-in-out .3s;
+    border: 0px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		margin: 0 0 1em 0;
+
+    &:hover {
+      box-shadow: .1rem 1rem 2rem rgba(0, 0, 0, 0.12), -.1rem 0 2rem rgba(0, 0, 0, 0.12);
+    }
+
+    .card__img {
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+      }
+
+      &:hover img {
+        transform: scale(1.2);
+      }
+
+      & img {
+        transition: all 1s ease 0s;
+        width: 100%;
+      }
+    }
+
+    .card__date {
+      background: $main-blue;
+      color: #fff;
+      font-size: 14px;
+      padding: 5px 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom-right-radius: 15px;
+      font-weight: bold;
+      opacity: 0.7;
+      transition: opacity 0.25s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .card__content {
+      margin: 5px 20px;
+      padding-bottom: 15px;
+
+      .card__title {
+        text-transform: uppercase;
+        margin-top: 10px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      h4 {
+        margin-bottom: 10px;
+        font-size: 17px;
+      }
+
+      .card__content-jcenter {
+        text-align: justify;
+        text-indent: 1rem;
+      }
+
+      & span > a {
+        color: #fff;
+        font-size: 14px;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-top-left-radius: 15px;
+        font-weight: bold;
+        background: $main-blue;
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#masonry {
+  column-count: 1;
+  column-gap: 1em;
+}
+
+@media(min-width: 30em) {
+  #masonry {
+    column-count: 1;
+    column-gap: 1em;
+  }
+}
+
+@media(min-width: 40em) {
+  #masonry {
+    column-count: 2;
+    column-gap: 1em;
+  }
+}
+
+@media(min-width: 60em) {
+  #masonry {
+    column-count: 3;
+    column-gap: 1em;
+  }
+}
+
+@media(min-width: 75em) {
+  #masonry {
+    column-count: 3;
+    column-gap: 1em;
+  }
+}
+</style>
