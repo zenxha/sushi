@@ -164,20 +164,18 @@ def logout():
 
 @app.route('/api/review/<int:id>')
 def get_review(id):
-    review_query = Review.query.all()
-    reviews = []
+    review = Review.query.filter_by(id=id).first()
+    if review:
+        url = url_for('get_img', id=id)
 
-    for review in review_query:
-        websiteurl = url_for('get_img', id=review.id)
         review_dict = {
             'id': review.id,
             'username': review.username,
             'content': review.content,
-            'satisfaction': review.satisfaction,
-            'image':  websiteurl
+            'satisfaction_level': review.satisfaction,
+            'image_url': "http://localhost:5000" + url
         }
-        reviews.append(review_dict)
-    if 0 <= id < len(reviews):
-        return(jsonify(reviews[id]))
+        return jsonify(review_dict)
+
     else:
         return Response(f"No review with id {id} exists", status=400)
