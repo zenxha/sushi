@@ -82,8 +82,6 @@ def upload():
         satisfaction = request.form["satisfaction"]
         content = request.form["content"]
         image = request.files.get('img')
-        if name == "mort":
-            return render_template('easteregg/IAM.html')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
@@ -116,6 +114,8 @@ def login_post():
         password = request.form.get('password')
         name = request.form.get("username")
         user = User.query.filter_by(username=name).first()
+        if name == "mort":
+            return render_template('easteregg/IAM.html')
         if not user: return render_template('homesite/signup.html', error="Please sign up for an account first")
         if user.password == password:
             session.pop('user', None)
@@ -142,6 +142,8 @@ def signup():
         name = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
+        if name == "mort":
+            return render_template('easteregg/IAM.html')
 
         user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
 
@@ -199,3 +201,4 @@ def get_all_reviews():
         reviews_dict[review.id] = review_dict
 
     return jsonify(reviews_dict)
+
