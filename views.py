@@ -46,7 +46,9 @@ def index():
 @app.route('/project')
 def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
-
+@app.route('/api')
+def api():
+    return "Current endpoints: <br><br>http://localhost:5000/api/review/{ID} - Returns a review object with the same id "
 @app.route('/easteregg')
 def easteregg():
     return render_template("easteregg/base.html", background="https://i.pinimg.com/originals/b8/e2/70/b8e270b7237f2f4c3a5905e6a3ca5f63.png")
