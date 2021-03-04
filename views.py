@@ -48,7 +48,7 @@ def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
 @app.route('/api')
 def api():
-    return "Current endpoints: <br><br>http://localhost:5000/api/review/{ID} - Returns a review object with the same id "
+    return "Current endpoints: <br><br>http://localhost:5000/api/review/id={ID}  - Returns a review object with the same id<br><br>http://localhost:5000/api/review/all  - Returns all reviews stored on the server. "
 @app.route('/easteregg')
 def easteregg():
     return render_template("easteregg/base.html", background="https://i.pinimg.com/originals/b8/e2/70/b8e270b7237f2f4c3a5905e6a3ca5f63.png")
@@ -164,7 +164,7 @@ def logout():
     session.pop('user')
     return redirect(url_for("index"))
 
-@app.route('/api/review/<int:id>')
+@app.route('/api/review/id=<int:id>')
 def get_review(id):
     review = Review.query.filter_by(id=id).first()
     if review:
@@ -181,3 +181,21 @@ def get_review(id):
 
     else:
         return Response(f"No review with id {id} exists", status=400)
+
+@app.route('/api/review/all')
+def get_all_reviews():
+    review_query = Review.query.all()
+    reviews_dict = {}
+
+    for review in review_query:
+        websiteurl = url_for('get_img', id=review.id)
+        review_dict = {
+            'id': review.id,
+            'username': review.username,
+            'content': review.content,
+            'satisfaction': review.satisfaction,
+            'image':  websiteurl
+        }
+        reviews_dict[review.id] = review_dict
+
+    return jsonify(reviews_dict)
