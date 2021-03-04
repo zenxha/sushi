@@ -122,9 +122,9 @@ def login_post():
             session['user'] = user.username
             return redirect(url_for('upload'))
         else:
-            return render_template('homesite/login.html', error="Please check your credentials and try again")
+            return render_template('homesite/login.html', error="Please check your credentials and try again", background = random.choice(backgrounds))
 
-    return render_template("homesite/login.html")
+    return render_template("homesite/login.html", background = random.choice(backgrounds))
 
 
 """
@@ -142,7 +142,7 @@ def signup():
         name = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
-        if name == "mort":
+        if name == "mort": # easter egg
             return render_template('easteregg/IAM.html')
 
         user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
@@ -158,7 +158,7 @@ def signup():
             db.session.commit()
 
             return redirect(url_for("login_post"))
-    return render_template('homesite/signup.html')
+    return render_template('homesite/signup.html', background = random.choice(backgrounds))
 
 
 @app.route('/logout')
