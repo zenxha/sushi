@@ -48,7 +48,7 @@ def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
 @app.route('/api')
 def api():
-    return "Current endpoints: <br><br>http://localhost:5000/api/review/{ID} - Returns a review object with the same id "
+    return "Current endpoints: <br><br>http://localhost:5000/api/review/id={ID}  - Returns a review object with the same id<br><br>http://localhost:5000/api/review/all  - Returns all reviews stored on the server. "
 @app.route('/easteregg')
 def easteregg():
     return render_template("easteregg/base.html", background="https://i.pinimg.com/originals/b8/e2/70/b8e270b7237f2f4c3a5905e6a3ca5f63.png")
@@ -82,8 +82,6 @@ def upload():
         satisfaction = request.form["satisfaction"]
         content = request.form["content"]
         image = request.files.get('img')
-        if name == "mort":
-            return render_template('easteregg/IAM.html')
         if not image:
             return 'bad news ur image didnt make it to our servers :((((', 400
 
@@ -116,15 +114,17 @@ def login_post():
         password = request.form.get('password')
         name = request.form.get("username")
         user = User.query.filter_by(username=name).first()
+        if name == "mort":
+            return render_template('easteregg/IAM.html')
         if not user: return render_template('homesite/signup.html', error="Please sign up for an account first")
         if user.password == password:
             session.pop('user', None)
             session['user'] = user.username
             return redirect(url_for('upload'))
         else:
-            return render_template('homesite/login.html', error="Please check your credentials and try again")
+            return render_template('homesite/login.html', error="Please check your credentials and try again", background = random.choice(backgrounds))
 
-    return render_template("homesite/login.html")
+    return render_template("homesite/login.html", background = random.choice(backgrounds))
 
 
 """
@@ -142,6 +142,8 @@ def signup():
         name = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
+        if name == "mort": # easter egg
+            return render_template('easteregg/IAM.html')
 
         user = User.query.filter_by(username=name).first() # if this returns a user, then the email already exists in database
 
@@ -156,7 +158,7 @@ def signup():
             db.session.commit()
 
             return redirect(url_for("login_post"))
-    return render_template('homesite/signup.html')
+    return render_template('homesite/signup.html', background = random.choice(backgrounds))
 
 
 @app.route('/logout')
@@ -164,7 +166,7 @@ def logout():
     session.pop('user')
     return redirect(url_for("index"))
 
-@app.route('/api/review/<int:id>')
+@app.route('/api/review/id=<int:id>')
 def get_review(id):
     review = Review.query.filter_by(id=id).first()
     if review:
@@ -181,3 +183,22 @@ def get_review(id):
 
     else:
         return Response(f"No review with id {id} exists", status=400)
+
+@app.route('/api/review/all')
+def get_all_reviews():
+    review_query = Review.query.all()
+    reviews_dict = {}
+
+    for review in review_query:
+        websiteurl = url_for('get_img', id=review.id)
+        review_dict = {
+            'id': review.id,
+            'username': review.username,
+            'content': review.content,
+            'satisfaction': review.satisfaction,
+            'image':  websiteurl
+        }
+        reviews_dict[review.id] = review_dict
+
+    return jsonify(reviews_dict)
+
