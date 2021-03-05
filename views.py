@@ -80,7 +80,7 @@ def crossover():
 def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
-        name = request.form["name"]
+        name = request.form["username"]
         satisfaction = request.form["satisfaction"]
         content = request.form["content"]
         image = request.files.get('img')
