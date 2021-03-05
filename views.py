@@ -3,7 +3,7 @@
 from __init__ import app
 import random
 import requests
-import flask
+import flask, json
 from flask import g, jsonify
 from flask import render_template, request, redirect, url_for, session, flash, Flask, Response, Blueprint
 
@@ -11,6 +11,8 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 from db import db_init, db
 from model import Review, User
+with open('config.json') as file:
+    config = json.load(file)
 
 
 app = Flask(__name__)
@@ -48,7 +50,7 @@ def project():
     return render_template("homesite/project.html", background=random.choice(backgrounds))
 @app.route('/api')
 def api():
-    return "Current endpoints: <br><br>http://localhost:5000/api/review/id={ID}  - Returns a review object with the same id<br><br>http://localhost:5000/api/review/all  - Returns all reviews stored on the server. "
+    return "Current endpoints: <br><br>"+ config['websiteURL'] + "/api/review/id={ID}  - Returns a review object with the same id<br><br>" + config['websiteURL'] + "/api/review/all  - Returns all reviews stored on the server. "
 @app.route('/easteregg')
 def easteregg():
     return render_template("easteregg/base.html", background="https://i.pinimg.com/originals/b8/e2/70/b8e270b7237f2f4c3a5905e6a3ca5f63.png")
@@ -78,7 +80,7 @@ def crossover():
 def upload():
     background = random.choice(backgrounds)
     if request.method == "POST":
-        name = request.form["user_name"]
+        name = request.form["name"]
         satisfaction = request.form["satisfaction"]
         content = request.form["content"]
         image = request.files.get('img')
@@ -177,12 +179,12 @@ def get_review(id):
             'username': review.username,
             'content': review.content,
             'satisfaction_level': review.satisfaction,
-            'image_url': "http://localhost:5000" + url
+            'image_url': config['websiteURL'] + url
         }
         return jsonify(review_dict)
 
     else:
-        return Response(f"No review with id {id} exists", status=400)
+        return Response("No review with that id ", status=400)
 
 @app.route('/api/review/all')
 def get_all_reviews():
