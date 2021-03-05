@@ -182,7 +182,7 @@ def get_review(id):
         return jsonify(review_dict)
 
     else:
-        return Response(f"No review with id {id} exists", status=400)
+        return Response("No review with that id exists", status=400)
 
 @app.route('/api/review/all')
 def get_all_reviews():
