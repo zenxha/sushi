@@ -26,38 +26,17 @@
   </div>
 {% endfor %}
 {% else %}
-<div class="center">
-  <div class="property-card">
-    <a href="https://www.youtube.com/watch?v=TQ8WlA2GXbk">
-      <div class="property-image">
-        <div class="property-image-title">
-
-        </div>
-      </div></a>
-    <div class="property-description">
-      <h5> Wow, such empty! </h5>
-      <p>No reviews published yet.<br>Be the first!</p>
-      <p>ID 42069</p>
-      <style>.property-image{background-image:url('https://i.pinimg.com/originals/2c/d5/f9/2cd5f95facd32432677a2a7f75391468.jpg');}</style>
-    </div>
-    <a href="#">
-      <div class="property-social-icons">
-
-      </div>
-    </a>
-  </div>
-</div>
-
-
 {% endif %}
 
 
 <style>
-body
+body,
+html
 {
   background-color:#f2f2f2;
   font-family: 'RobotoDraft', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow: visible;
 }
 
 *
@@ -78,14 +57,9 @@ p
   font-size:12px;
 }
 
-.center
+.box
 {
-  content:"";
-  height:100vh;
-  width:100%;
   display: inline-list-item;
-  justified-content: start;
-  align-items: start;
   clear: both;
 }
 
