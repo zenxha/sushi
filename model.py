@@ -1,5 +1,5 @@
 
-from flask_login import UserMixin
+#from flask_login import UserMixin
 
 from db import db
 
@@ -14,7 +14,7 @@ class Review(db.Model):
     mimetype = db.Column(db.Text, nullable=False)
 
 
-class User(UserMixin, db.Model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.Text, nullable=False)
     email = db.Column(db.Text, nullable=False)
