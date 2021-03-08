@@ -17,7 +17,7 @@ Group Project for tri2!
 
 - Front End Aspect
   - Visuals: 
-    - For the last couple of weeks, we mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) 
+    - [Displaying quotes from an API onto our homepage](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) 
     - [Animated home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
     - 
   - HTML:
