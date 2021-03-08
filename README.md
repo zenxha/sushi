@@ -24,12 +24,20 @@ Group Project for tri2!
     - Created upload page that allows users to write a review, upload an image, and select their satisfaction value on their sushi. [Code](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/loginv2.html#L152-L174)
     - [Display user uploaded information from upload.html onto browse.html](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/browse.html#L7-L26)
     - Used a table like display to [display each member's IAM statements](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/IAM.html#L11-L73)
+    - [Pulls user inputted data from login](https://github.com/zenxha/sushi/blob/main/templates/homesite/login.html#L170-L177) to check with database for account
 
 - Back End Aspect
   - Routes: 
     - The recently updated routes on our project are our [easteregg path where you need mort as the username](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L63-L71) and [browse page](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L47-L60) that takes info from upload and displays it on the browse page.
   - Database:
-    - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11), and the information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82) and is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60) [here](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/templates/homesite/browse.html#L14-L18)
+    - Upload
+      - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11), and the information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82) and is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60) [here](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/templates/homesite/browse.html#L14-L18)
+    - Login/Signup
+      - [Compares data in signup with data from database, if doesn't match, add to database](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
+      - Check if the user has an account by [checking usernames in database](https://github.com/zenxha/sushi/blob/main/views.py#L116-L119)
+      - [If password is correct, it signs the user in and redirect to upload page, if information incorrect, redirect to login.](https://github.com/zenxha/sushi/blob/main/views.py#L123-L128)
+    - Browse.html
+      - 
 - Easter Egg 
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
 - Project WOW
