@@ -17,6 +17,7 @@ Group Project for tri2!
 - If you do not have an account, go to signup to make an account then login via sign in
 - In order to upload a review, navigate to upload.html and fill out the form, then hit upload
 - To get to our easteregg section, go to sign in and type in mort as the username, then hit submit. There you can view our IAM statements, crossover report, and project plan
+- To use our API, go to the API section and use the url given, replacing {ID} with the id of the review you want to get
 
 ### Technicals
 
@@ -33,10 +34,15 @@ Group Project for tri2!
 
 - Back End Aspect
   - Routes: 
-    - The recently updated routes on our project are our [easteregg path where you need mort as the username](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L63-L71) and [browse page](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L47-L60) that takes info from upload and displays it on the browse page.
+    - [Easteregg path where you need mort as the username](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L63-L71)
+    - [Browse page](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L47-L60) that takes info from upload and displays it on the browse page.
+    - [Upload page](https://github.com/zenxha/sushi/blob/cec8ccd2c7b006b800a97b0e1d6f891c45f91d9d/views.py#L80-L100) where uploaded info is stored onto database
+    - [Image id viewer](https://github.com/zenxha/sushi/blob/cec8ccd2c7b006b800a97b0e1d6f891c45f91d9d/views.py#L102-L108) which lets you view individual images based on id
   - Database:
     - Upload
-      - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11), and the information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82) and is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60) [here](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/templates/homesite/browse.html#L14-L18)
+      - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11)
+      - The information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82)
+      - And information is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60) [here](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/templates/homesite/browse.html#L14-L18)
     - Login/Signup
       - [Compares data in signup with data from database, if doesn't match, add to database](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
       - Check if the user has an account by [checking usernames in database](https://github.com/zenxha/sushi/blob/main/views.py#L116-L119)
@@ -45,7 +51,7 @@ Group Project for tri2!
       - [Takes information from upload.html](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
       - [Displays information on namecards on browse.html](https://github.com/zenxha/sushi/blob/2407689b21067ee1637b7f3c858f0db6245f6bff/templates/homesite/browse.html#L6-L18)
 - Easter Egg 
-  - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
+  - To get to our easter egg, use the username mort in signin and click submit. Then use the easter egg navbar to view the other sections of the easter egg
 - Project WOW
   - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Each image uploaded is assigned an id, which you can view on the browse page. Once you have the image, go to the url http://rubinfamily.dyndns.org:5000/images/1, where you replace 1 with whatever id the image you just uploaded is to view the image. You can also view the image by clicking the picture in the browse page and see the full image
 
