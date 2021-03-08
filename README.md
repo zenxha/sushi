@@ -28,9 +28,9 @@ Group Project for tri2!
     - Created [background](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/base.html#L29-L34) for easter egg section of the website
   - HTML:
     - Created upload page that allows users to write a review, upload an image, and select their satisfaction value on their sushi. [Code](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/loginv2.html#L152-L174)
-    - [Display user uploaded information from upload.html onto browse.html](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/browse.html#L7-L26)
+    - [Display user uploaded information from upload.html onto browse.html](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/browse.html#L7-L26)(Utilized Trish's upload form from her tech talk)
     - Used a table like display to [display each member's IAM statements](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/IAM.html#L11-L73)
-    - [Pulls user inputted data from login](https://github.com/zenxha/sushi/blob/main/templates/homesite/login.html#L170-L177) to check with database for account
+    - [Pulls user inputted data from login](https://github.com/zenxha/sushi/blob/main/templates/homesite/login.html#L170-L177) to check with database for account (Also used elements of Trish's tech talk to create the form)
 
 - Back End Aspect
   - Routes: 
@@ -39,17 +39,19 @@ Group Project for tri2!
     - [Upload page](https://github.com/zenxha/sushi/blob/cec8ccd2c7b006b800a97b0e1d6f891c45f91d9d/views.py#L80-L100) where uploaded info is stored onto database
     - [Image id viewer](https://github.com/zenxha/sushi/blob/cec8ccd2c7b006b800a97b0e1d6f891c45f91d9d/views.py#L102-L108) which lets you view individual images based on id
   - Database:
-    - Upload
+    - Upload 
       - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11)
       - The information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82)
       - And information is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60) [here](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/templates/homesite/browse.html#L14-L18)
-    - Login/Signup
+    - Login/Signup 
       - [Compares data in signup with data from database, if doesn't match, add to database](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
       - Check if the user has an account by [checking usernames in database](https://github.com/zenxha/sushi/blob/main/views.py#L116-L119)
       - [If password is correct, it signs the user in and redirect to upload page, if information incorrect, redirect to login.](https://github.com/zenxha/sushi/blob/main/views.py#L123-L128)
     - Review Browser
       - [Takes information from upload.html](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
       - [Displays information on namecards on browse.html](https://github.com/zenxha/sushi/blob/2407689b21067ee1637b7f3c858f0db6245f6bff/templates/homesite/browse.html#L6-L18)
+    - API viewer
+      - [Querying database and returning data in the form of json to the user](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L172-L204)
 - Easter Egg 
   - To get to our easter egg, use the username mort in signin and click submit. Then use the easter egg navbar to view the other sections of the easter egg
 - Project WOW
