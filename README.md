@@ -36,8 +36,9 @@ Group Project for tri2!
       - [Compares data in signup with data from database, if doesn't match, add to database](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
       - Check if the user has an account by [checking usernames in database](https://github.com/zenxha/sushi/blob/main/views.py#L116-L119)
       - [If password is correct, it signs the user in and redirect to upload page, if information incorrect, redirect to login.](https://github.com/zenxha/sushi/blob/main/views.py#L123-L128)
-    - Browse.html
-      - 
+    - Review Browser
+      - [Takes information from upload.html](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
+      - [Displays information on namecards on browse.html](https://github.com/zenxha/sushi/blob/2407689b21067ee1637b7f3c858f0db6245f6bff/templates/homesite/browse.html#L6-L18)
 - Easter Egg 
   - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
 - Project WOW
