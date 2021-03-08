@@ -27,10 +27,10 @@ Group Project for tri2!
     - [Animated home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
     - Created [background](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/base.html#L29-L34) for easter egg section of the website
   - HTML:
-    - Created upload page that allows users to write a review, upload an image, and select their satisfaction value on their sushi. [Code](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/loginv2.html#L152-L174)
-    - [Display user uploaded information from upload.html onto browse.html](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/browse.html#L7-L26)(Utilized Trish's upload form from her tech talk)
-    - Used a table like display to [display each member's IAM statements](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/IAM.html#L11-L73)
-    - [Pulls user inputted data from login](https://github.com/zenxha/sushi/blob/main/templates/homesite/login.html#L170-L177) to check with database for account (Also used elements of Trish's tech talk to create the form)
+    - Upload: Created upload page that allows users to write a review, upload an image, and select their satisfaction value on their sushi. [Code](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/loginv2.html#L152-L174)
+    - Browse: [Display user uploaded information from upload.html onto browse.html](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/browse.html#L7-L26) (Utilized Trish's upload form from her tech talk)
+    - IAM: Used a table like display to [display each member's IAM statements](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/IAM.html#L11-L73)
+    - Login/Signup: Pulls user inputted data from [login](https://github.com/zenxha/sushi/blob/main/templates/homesite/login.html#L170-L177)/[signup](https://github.com/zenxha/sushi/blob/9a807f64d1a07963446ea947469ef677274a1975/templates/homesite/signup.html#L171-L179) to check with database for account (Also used elements of Trish's tech talk to create the form)
 
 - Back End Aspect
   - Routes: 
