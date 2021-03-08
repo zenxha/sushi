@@ -62,6 +62,7 @@ def browse():
 
     for review in review_query:
         websiteurl = url_for('get_img', id=review.id)
+
         review_dict = {
             'id': review.id,
             'username': review.username,
