@@ -12,6 +12,11 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
+### Navigating our website
+- Once on the website, use the navbar in the top right to check out each section
+- If you do not have an account, go to signup to make an account then login via sign in
+- In order to upload a review, navigate to upload.html and fill out the form, then hit upload
+- To get to our easteregg section, go to sign in and type in mort as the username, then hit submit. There you can view our IAM statements, crossover report, and project plan
 
 ### Technicals
 
