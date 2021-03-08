@@ -17,8 +17,9 @@ Group Project for tri2!
 
 - Front End Aspect
   - Visuals: 
-    - For the last couple of weeks, we mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) and creating a [nice looking home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
-    - We are currently working on our table to display user uploaded info from the upload page onto our browse page
+    - For the last couple of weeks, we mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) 
+    - [Animated home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
+    - Display user uploaded information from upload.html onto browse.html
   - HTML:
     - We primarily focused on implementing a scoreboard/table like Trish demonstrated, which can be seen in our [browse.html](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html) file.
   - CSS: 
