@@ -96,7 +96,7 @@ def upload():
         review = Review(username=name, content=content, img=image.read(), filename=filename, satisfaction=satisfaction,mimetype=mimetype)
         db.session.add(review)
         db.session.commit()
-        return redirect(url_for("browse"))
+        return redirect(url_for("brows"))
     return render_template("homesite/loginv2.html", background=background)
 
 @app.route('/images/<int:id>')
