@@ -57,6 +57,7 @@ def easteregg():
 
 @app.route('/browse')
 def browse():
+    backgrounds = ["https://cdn.discordapp.com/attachments/784178874303905792/818606015494094868/812382.png"]
     review_query = Review.query.all()
     reviews = []
 

@@ -18,9 +18,7 @@
         <p>ID {{review.id}}</p>
       </div>
       <a href="#">
-        <div class="property-social-icons">
           <!-- I would usually put multiple divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
-        </div>
       </a>
     </div>
   </div>
@@ -36,7 +34,8 @@ html
   background-color:#f2f2f2;
   font-family: 'RobotoDraft', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 
@@ -44,6 +43,7 @@ html
 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 h5
@@ -138,27 +138,10 @@ p
 
 /* Property Cards Hover States */
 
-.property-card:hover .property-description
-{
-  height:0em;
-  padding:0px 1em;
-}
-.property-card:hover .property-image
-{
-  height:18em;
-}
-
-.property-card:hover .property-social-icons
+.property-card:hover
 {
   background-color:white;
 }
-
-.property-card:hover .property-social-icons:hover
-{
-  background-color:blue;
-  cursor:pointer;
-}
-
 
 /* Optional
 
@@ -179,6 +162,11 @@ opacity:1;
 }
 
 */
-</style>
+
+"background css"
+
+header:before {
+  animation: grow 60s linear .5s infinite;
+}
 
 {% endblock %}
