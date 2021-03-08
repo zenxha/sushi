@@ -12,25 +12,50 @@ Group Project for tri2!
 - Chris Rubin ID: #72892271
 - Devam Shrivastava ID: 51984972
 
+### Navigating our website
+- Once on the website, use the navbar in the top right to check out each section
+- If you do not have an account, go to signup to make an account then login via sign in
+- In order to upload a review, navigate to upload.html and fill out the form, then hit upload
+- To get to our easteregg section, go to sign in and type in mort as the username, then hit submit. There you can view our IAM statements, crossover report, and project plan
+- To use our API, go to the API section and use the url given, replacing {ID} with the id of the review you want to get
 
-### Technicals Summary
+### Technicals
 
 - Front End Aspect
   - Visuals: 
-    - For the last couple of weeks, we mainly worked on visuals in our home page, such as [displaying quotes from an api,](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) and creating a [nice looking home page with CSS.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
-    - We are currently working on our table to display user uploaded info from the upload page onto our browse page
+    - [Displaying quotes from an API onto our homepage](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) 
+    - [Animated home page with CSS, used a gradient to make text easily visable.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
+    - Created [background](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/base.html#L29-L34) for easter egg section of the website
   - HTML:
-    - We primarily focused on implementing a scoreboard/table like Trish demonstrated, which can be seen in our [browse.html](https://github.com/zenxha/sushi/blob/main/templates/homesite/browse.html) file.
-  - CSS: 
-    - We used CSS in designing our pages on the website, such as our [home page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163) [login page,](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/login.html#L7-L135) and [upload page.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/loginv2.html#L11-L135)
+    - Upload: Created upload page that allows users to write a review, upload an image, and select their satisfaction value on their sushi. [Code](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/loginv2.html#L152-L174)
+    - Browse: [Display user uploaded information from upload.html onto browse.html](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/browse.html#L7-L26) (Utilized Trish's upload form from her tech talk)
+    - IAM: Used a table like display to [display each member's IAM statements](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/IAM.html#L11-L73)
+    - Login/Signup: Pulls user inputted data from [login](https://github.com/zenxha/sushi/blob/main/templates/homesite/login.html#L170-L177)/[signup](https://github.com/zenxha/sushi/blob/9a807f64d1a07963446ea947469ef677274a1975/templates/homesite/signup.html#L171-L179) to check with database for account (Also used elements of Trish's tech talk to create the form)
 
 - Back End Aspect
   - Routes: 
-    - The recently updated routes on our project are our [easteregg path where you need mort as the username](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L63-L71) and [browse page](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L47-L60) that takes info from upload and displays it on the browse page.
+    - [Easteregg path where you need mort as the username](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L63-L71)
+    - [Browse page](https://github.com/zenxha/sushi/blob/358412ff2e6057e202f4d1b2e697487fca2fd6a9/views.py#L47-L60) that takes info from upload and displays it on the browse page.
+    - [Upload page](https://github.com/zenxha/sushi/blob/cec8ccd2c7b006b800a97b0e1d6f891c45f91d9d/views.py#L80-L100) where uploaded info is stored onto database
+    - [Image id viewer](https://github.com/zenxha/sushi/blob/cec8ccd2c7b006b800a97b0e1d6f891c45f91d9d/views.py#L102-L108) which lets you view individual images based on id
   - Database:
-    - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11), and the information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82) and is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60) [here](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/templates/homesite/browse.html#L14-L18)
+    - Upload 
+      - We mainly use the information stored on [this database](https://github.com/zenxha/sushi/blob/fa37260ea37930cff19fd023076c2a3ee56d5a4f/model.py#L5-L11)
+      - The information gets [stored from the upload page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L62-L82)
+      - And information is [displayed on our browse page](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/views.py#L47-L60) [here](https://github.com/zenxha/sushi/blob/36fed625125b4679d7682e593dbc592bade06ace/templates/homesite/browse.html#L14-L18)
+    - Login/Signup 
+      - [Compares data in signup with data from database, if doesn't match, add to database](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
+      - Check if the user has an account by [checking usernames in database](https://github.com/zenxha/sushi/blob/main/views.py#L116-L119)
+      - [If password is correct, it signs the user in and redirect to upload page, if information incorrect, redirect to login.](https://github.com/zenxha/sushi/blob/main/views.py#L123-L128)
+    - Review Browser
+      - [Takes information from upload.html](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
+      - [Displays information on namecards on browse.html](https://github.com/zenxha/sushi/blob/2407689b21067ee1637b7f3c858f0db6245f6bff/templates/homesite/browse.html#L6-L18)
+    - API viewer
+      - [Querying database and returning data in the form of json to the user](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L172-L174)
+      - [Displaying individual review based on id in form of json](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L176-L185)
+      - [Displaying all reviews in form of json](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L190-L206)
 - Easter Egg 
-  - To get to our easter egg, fill out the upload form on the website but put mort as the username to access the easteregg
+  - To get to our easter egg, use the username mort in signin and click submit. Then use the easter egg navbar to view the other sections of the easter egg
 - Project WOW
   - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Each image uploaded is assigned an id, which you can view on the browse page. Once you have the image, go to the url http://rubinfamily.dyndns.org:5000/images/1, where you replace 1 with whatever id the image you just uploaded is to view the image. You can also view the image by clicking the picture in the browse page and see the full image
 
