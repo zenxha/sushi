@@ -7,6 +7,7 @@
     <div class="property-card">
       <a href="{{review.image}}">
         <div class="property-image">
+          <img class="property-image" src="{{review.image}}">
           <div class="property-image-title">
             <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
           </div>
@@ -15,11 +16,10 @@
         <h5> {{review.username}} </h5>
         <p>{{review.content}}</p>
         <p>ID {{review.id}}</p>
-        <style>.property-image{background-image:url('{{review.image}}');}</style>
       </div>
       <a href="#">
         <div class="property-social-icons">
-          <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+          <!-- I would usually put multiple divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
         </div>
       </a>
     </div>
@@ -38,6 +38,7 @@ html
   -webkit-font-smoothing: antialiased;
   overflow: visible;
 }
+
 
 *
 {
@@ -93,9 +94,7 @@ p
 {
   height:6em;
   width:14em;
-  padding:1em 2em;
-  position:Absolute;
-  top:0px;
+  position:relative;
   -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);

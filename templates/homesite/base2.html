@@ -10,7 +10,7 @@
 			<li><a href="{{ url_for('browse')}}">Browse</a></li>
 			<li><a href="{{ url_for('api') }}">API</a></li>
 			{% if not session['user'] %}
-			<li><a href="{{ url_for('login_post') }}">Login</a></li>
+			<li><a href="{{ url_for('login_post') }}">Sign in</a></li>
 			<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
 			{% endif %}
 
