@@ -17,6 +17,8 @@ Group Project for tri2!
 - If you do not have an account, go to signup to make an account then login via sign in
 - In order to upload a review, navigate to upload.html and fill out the form, then hit upload
 - To get to our easteregg section, go to sign in and type in mort as the username, then hit submit. There you can view our IAM statements, crossover report, and project plan
+- ![ezgif-1-c5eda064edbc](https://user-images.githubusercontent.com/72947445/110530376-3888b100-80cf-11eb-9e07-f74ebaa022cf.gif)
+
 - To use our API, go to the API section and use the url given, replacing {ID} with the id of the review you want to get
 
 ### Technicals
