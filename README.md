@@ -61,7 +61,7 @@ Group Project for tri2!
   - [Our upload page](http://rubinfamily.dyndns.org:5000/upload). Each image uploaded is assigned an id, which you can view on the browse page. Once you have the image, go to the url http://rubinfamily.dyndns.org:5000/images/1, where you replace 1 with whatever id the image you just uploaded is to view the image. You can also view the image by clicking the picture in the browse page and see the full image
 
 
-### Tickets Progress
+### Tickets Progress (Overall progress linked [here](https://github.com/zenxha/sushi/projects/4))
 
 |Member|Tickets|
 | --- | --- |
