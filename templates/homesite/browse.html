@@ -2,7 +2,7 @@
 
 {% block body %}
 {% if reviews|length > 0 %}
-{% for review in reviews %}
+{% for review in reviews|reverse %}
   <div class="box">
     <div class="property-card">
       <a href="{{review.image}}">
@@ -18,9 +18,7 @@
         <p>ID {{review.id}}</p>
       </div>
       <a href="#">
-        <div class="property-social-icons">
           <!-- I would usually put multiple divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
-        </div>
       </a>
     </div>
   </div>
@@ -36,7 +34,10 @@ html
   background-color:#f2f2f2;
   font-family: 'RobotoDraft', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin-left: -10px;
+  margin-top: auto;
 }
 
 
@@ -44,6 +45,7 @@ html
 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 h5
@@ -83,8 +85,6 @@ p
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-radius:16px;
   overflow:hidden;
-  -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
-  box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
 }
 /* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
 
@@ -138,27 +138,10 @@ p
 
 /* Property Cards Hover States */
 
-.property-card:hover .property-description
-{
-  height:0em;
-  padding:0px 1em;
-}
-.property-card:hover .property-image
-{
-  height:18em;
-}
-
-.property-card:hover .property-social-icons
+.property-card:hover
 {
   background-color:white;
 }
-
-.property-card:hover .property-social-icons:hover
-{
-  background-color:blue;
-  cursor:pointer;
-}
-
 
 /* Optional
 
@@ -179,6 +162,11 @@ opacity:1;
 }
 
 */
-</style>
+
+"background css"
+
+header:before {
+  animation: grow 60s linear .5s infinite;
+}
 
 {% endblock %}

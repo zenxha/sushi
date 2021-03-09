@@ -63,21 +63,23 @@
 		width: 100vw;
 		height: 100vh;
 		display: flex;
-		position: relative;
+		position: absolute;
 		align-items: center;
 		flex-direction: column;
 	}
 
 	header:before {
 		content: "";
-		width: 100%;
 		z-index: -1;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		animation: grow 60s linear .5s infinite;
-		background: linear-gradient(rgba(103, 135, 211, .6), rgba(144, 25, 166, .6)), url("{{background}}") no-repeat fixed top center / cover;
+		height: 1080px;
+		width: 1920px;
+		position: fixed;
+		animation: unset;
+		background: linear-gradient(rgba(103, 135, 211, .6), rgba(144, 25, 166, .6)), url("{{background}}") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 
 	header nav {

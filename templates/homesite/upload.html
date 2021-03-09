@@ -27,7 +27,8 @@
 <style>
   body,
   html{
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
 
@@ -60,6 +61,11 @@
   top: 0;
   opacity: 0;
 }
+
+header:before {
+  animation: grow 60s linear .5s infinite;
+}
+
 </style>
 
 {% endblock %}

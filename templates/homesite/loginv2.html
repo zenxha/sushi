@@ -22,7 +22,8 @@ body,
 html{
   font-family: 'Nunito', sans-serif;
   color: #384047;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 form {
@@ -137,6 +138,11 @@ p.show{
     max-width: 480px;
   }
 }
+
+header:before {
+    animation: grow 60s linear .5s infinite;
+}
+
 {% endblock %}
 </style>
 </head>
@@ -156,9 +162,10 @@ p.show{
         <label for="name">Name:</label>
         <input type="text" id="name" name="username" required placeholder="Ben Dover" autofocus>
         <label for="mail">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="email@email.com" autofocus>
+        <input type="email" id="email" name="email" required placeholder="hughjaas@email.com" autofocus>
         <label for="bio">Leave your review here</label>
-        <textarea name="content" required placeholder="Write your review here..."form="sign-up"></textarea>
+        <textarea name="content" required placeholder="Write your review here...
+Ex: I like the sweetness of the teriyaki sauce..." form="sign-up" style="margin: 0px 0px 30px; height: 138px; width: 346px;"></textarea>
         <!--upload part-->
 
 
