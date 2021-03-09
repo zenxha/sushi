@@ -2,7 +2,7 @@
 
 {% block body %}
 {% if reviews|length > 0 %}
-{% for review in reviews %}
+{% for review in reviews|reverse %}
   <div class="box">
     <div class="property-card">
       <a href="{{review.image}}">
