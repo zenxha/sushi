@@ -50,7 +50,7 @@ Group Project for tri2!
     - Review Browser
       - [Takes information from upload.html](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
       - [Displays information on namecards on browse.html](https://github.com/zenxha/sushi/blob/2407689b21067ee1637b7f3c858f0db6245f6bff/templates/homesite/browse.html#L6-L18)
-    - API viewer
+    - API viewer (Utilized recent tech talk to create this section)
       - [Querying database and returning data in the form of json to the user](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L172-L174)
       - [Displaying individual review based on id in form of json](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L176-L185)
       - [Displaying all reviews in form of json](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L190-L206)
