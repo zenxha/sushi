@@ -62,21 +62,14 @@ Group Project for tri2!
 
 
 ### Tickets Progress
-- Allen
-  - [Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)
-  - [Worked with Chris on creating the front end for our browse page that displays the user's review (2nd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
-  - [Embed the crossover report into the easter egg navbar](https://github.com/zenxha/sushi/projects/4#card-55314605)
-  - [Moved the project section from the main site navbar to the easter egg navbar](https://github.com/zenxha/sushi/projects/4#card-55314635)
-- Chris
-  - [Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53703118)
-  - [Worked on creating the front end for the browse page that displays user info and implementing CSS on the page(2nd and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
-- Devam
-  - [Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)
-  - [Helped secure the route to easter egg so it is only accessible by entering mort as the username, and can't be viewed by just typing in the url (checkbox 2 and 3)](https://github.com/zenxha/sushi/projects/4#card-53782464)
-- Komay
-  - [Worked on integrating the backend login/auth system with the frontend html form](https://github.com/zenxha/sushi/projects/4#card-54354857)
-  - [Finished 3rd checkbox of the ticket which only allows the correct account to access easteregg](https://github.com/zenxha/sushi/projects/4#card-53782464)
-  - [Worked on the backend aspect of taking the informatoin from upload.html and displaying it on browse.html(1st and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)
+
+|Member|Tickets|
+| --- | --- |
+|Allen|<ul><li>[Worked on creating the IAM page and displaying each person's IAM statements](https://github.com/zenxha/sushi/projects/4#card-54281293)</li><li>[Worked with Chris on creating the front end for our browse page that displays the user's review (2nd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)</li><li>[Embed the crossover report into the easter egg navbar](https://github.com/zenxha/sushi/projects/4#card-55314605)</li><li>[Moved the project section from the main site navbar to the easter egg navbar](https://github.com/zenxha/sushi/projects/4#card-55314635)</li><ul>|
+|Chris|<ul><li>[Work on the user sessions as well as user authentication](https://github.com/zenxha/sushi/projects/4#card-53703118)</li><li>[Worked on creating the front end for the browse page that displays user info and implementing CSS on the page(2nd and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)</li><ul>|
+|Devam|<ul><li>[Work on user login and authentication (still incomplete due to technical issues. We have it running, but not storing in database)](https://github.com/zenxha/sushi/projects/4#card-53785877)</li><li>[Helped secure the route to easter egg so it is only accessible by entering mort as the username, and can't be viewed by just typing in the url (checkbox 2 and 3)](https://github.com/zenxha/sushi/projects/4#card-53782464)|
+|Komay|<ul><li>[Worked on integrating the backend login/auth system with the frontend html form](https://github.com/zenxha/sushi/projects/4#card-54354857)</li><li>[Finished 3rd checkbox of the ticket which only allows the correct account to access easteregg](https://github.com/zenxha/sushi/projects/4#card-53782464)</li><li>[Worked on the backend aspect of taking the informatoin from upload.html and displaying it on browse.html(1st and 3rd checkbox)](https://github.com/zenxha/sushi/projects/4#card-55146571)</li><ul>|
+
 
 ### College Board Requirements
 - Instructions for input from one of the following:
