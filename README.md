@@ -23,9 +23,10 @@ Group Project for tri2!
 
 - Front End Aspect
   - Visuals: 
-    - [Displaying quotes from an API onto our homepage](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38) 
-    - [Animated home page with CSS, used a gradient to make text easily visable.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)
-    - Created [background](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/base.html#L29-L34) for easter egg section of the website
+    - [Displaying quotes from an API onto our homepage](https://github.com/zenxha/sushi/blob/cd2b15bcf0891ea65179d5313b9b589c463e3676/views.py#L31-L38)![](https://user-images.githubusercontent.com/72947445/110418753-eef78200-804c-11eb-8514-9a8a3fa2577a.gif)
+    - [Animated home page with CSS, used a gradient to make text easily visable.](https://github.com/zenxha/sushi/blob/d7b689743ea916ab470de41c06ed3d0e4fa7c28f/templates/homesite/base2.html#L38-L163)(Can be viewed in video above)
+    - Created [background](https://github.com/zenxha/sushi/blob/8330192e9146bac29500ffc3948b079e174d306b/templates/easteregg/base.html#L29-L34) for easter egg section of the website ![](https://user-images.githubusercontent.com/72947445/110418664-d2f3e080-804c-11eb-9fa1-32645d2bcb5d.gif)
+ 
   - HTML:
     - Upload: Created upload page that allows users to write a review, upload an image, and select their satisfaction value on their sushi. [Code](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/loginv2.html#L152-L174)
     - Browse: [Display user uploaded information from upload.html onto browse.html](https://github.com/zenxha/sushi/blob/6c1feeb6993cf5d9f5edc72b877c0142d69d025a/templates/homesite/browse.html#L7-L26) (Utilized Trish's upload form from her tech talk)
@@ -50,7 +51,7 @@ Group Project for tri2!
     - Review Browser
       - [Takes information from upload.html](https://github.com/zenxha/sushi/blob/main/views.py#L144-L157)
       - [Displays information on namecards on browse.html](https://github.com/zenxha/sushi/blob/2407689b21067ee1637b7f3c858f0db6245f6bff/templates/homesite/browse.html#L6-L18)
-    - API viewer
+    - API viewer (Utilized recent tech talk to create this section)
       - [Querying database and returning data in the form of json to the user](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L172-L174)
       - [Displaying individual review based on id in form of json](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L176-L185)
       - [Displaying all reviews in form of json](https://github.com/zenxha/sushi/blob/52e9f3dadf6abfe50e7c9d476518afee48cf1a66/views.py#L190-L206)
@@ -98,38 +99,5 @@ body of the selected procedure
 program functionality
 
 ## Our Idea
-- We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to search our database of sushi’s and read about each sushi’s description and origin. If you sign up, you’ll be able to save your favorite sushi’s and post
-
-## Things we want to have:
-- Database of user uploaded sushi images
-- Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering
-- Menu example: https://www.toasttab.com/rbsushi-ranchobernardo/v3
-- Login system that people can create/save accounts with
-- Have users be able to upload their own sushis (picture, desc, reviews)[SQLAlchemy]
-- Do this with database that will store sushi name, images, description, user reviews onto database (CB Big Idea #2 and #3)
-- Have an option to view the descriptions and reviews of the sushi
-- Pull from the database and display that information
-- Library of all the tier lists other people have made that the user can browse
-- Redirects to social media to draft messages
-
-## Structure/Design:
-
-* Function on flask
-* Navbar that lets user navigate the website from info on sushi to posting their favorite sushis
-* Data driven UI designs will be storyboarded through google drawings, then implemented into the website once approved. (CB Big Idea #3)
-* Login function to save information the user performs in database
-* Upload page will allow user to add own sushi images into database
-* Database holds information to
-  * Sushi types, descriptions, and rating out of 10
-  * Login information (this has to be dynamic)
-  * Saved tier lists
-  * Images to sushis submitted by the users (will include file size limiter, file type selector)
-
-## Planned Features
-- Database of every sushi
-  - Types of sushi: https://www.tablespoon.com/posts/know-your-sushi-types-and-terms-before-ordering
-  - Menu example: https://www.toasttab.com/rbsushi-ranchobernardo/v3
-- Login system that people can create/save accounts with
-- Library of all the tier lists other people have made that the user can browse
-- Redirects to social media to draft messages
+- We aim for a simple and clean site that contains everything about sushi. On the site you’ll be able to upload images of sushi and review sushi and give your opinon on each sushi you eat.
 
