@@ -49,7 +49,7 @@ def index():
 """our own project dstufsuf as"""
 
 @app.route('/ping', methods=["POST", 'GET'])
-@roles_required('Admin')
+@login_required
 def upload():
     return render_template("homesite/loginv2.html")
 
